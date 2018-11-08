@@ -5,7 +5,6 @@ const cors = require('cors');
 
 const serverPath = 3000; // localhost server
 
-
 // importing routers
 const userRouter = require('./routing/user.js');
 
@@ -17,14 +16,15 @@ app.use(cors());
 // database 
 mongoose
   .connect(
-    "mongodb+srv://shal1231:Shal1231@cluster0-wlagw.mongodb.net/test?retryWrites=true", 
+    // "mongodb+srv://shal1231:Shal1231@cluster0-wlagw.mongodb.net/test?retryWrites=true",
+    "mongodb://localhost/testauth",
     {useNewUrlParser: true}
   )
   .then(() => {
     console.log("Connected to database!");
   })
-  .catch(() => {
-    console.log("Connection failed!");
+  .catch((err) => {
+    console.log("Connection failed!", err);
   });
 
   // to get rid of this error
@@ -32,7 +32,6 @@ mongoose
   mongoose.set('useCreateIndex', true)
 
 // routers
-
 app.use('/', userRouter); // login && logout routers
 
 

@@ -6,8 +6,6 @@ const User = require('../modal/user'); // from the modal
 
 const router = express.Router();
 
-
-
 // signup (localhost:3000/signup)
 router.post("/signup", (req,res) => {
     bcrypt.hash(req.body.password,10)
