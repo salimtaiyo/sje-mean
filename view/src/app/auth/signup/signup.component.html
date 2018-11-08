@@ -1,0 +1,6 @@
+<form #signupForm="ngForm">
+  <input type="text" placeholder="email" name="emailInput" [(ngModel)]="emailInput" value={{emailInput}}>
+  <input type="password" placeholder="password" name="passwordInput" [(ngModel)]="passwordInput" value={{passwordInput}}>
+  <button (click)="onSignup(signupForm)"> Signup </button>
+</form>
+
