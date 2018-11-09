@@ -15,6 +15,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AccordionModule } from 'primeng/accordion';
 import { MenuItem } from 'primeng/api';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import { MatMenuModule, MatButtonModule, MatIconModule, MatCardModule, MatSidenavModule } from '@angular/material';
+import { MatCheckboxModule } from '@angular/material';
 
 
 
@@ -33,6 +37,16 @@ import { MenuItem } from 'primeng/api';
     FormsModule,
     HttpClientModule,
     AccordionModule,
+
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

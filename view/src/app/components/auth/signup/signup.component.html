@@ -1,6 +1,49 @@
-<form #signupForm="ngForm">
-  <input type="text" placeholder="email" name="emailInput" [(ngModel)]="emailInput" value={{emailInput}}>
-  <input type="password" placeholder="password" name="passwordInput" [(ngModel)]="passwordInput" value={{passwordInput}}>
-  <button (click)="onSignup(signupForm)"> Signup </button>
-</form>
+<form class="forml" #signupForm="ngForm">
+    <fieldset>
+      <legend>Sign Up</legend>
+      <label for="username">Username</label> <br />
+      <input
+        type="text"
+        name="emailInput"
+        [(ngModel)]="emailInput"
+        value="{{emailInput}}"
+      /><br />
+      <label for="name">Name</label><br />
+      <input
+        type="text"
+        placeholder="First Name"
+        name="passwordInput"
+        [(ngModel)]="passwordInput"
+        value="{{passwordInput}}"
+      /><br />
+      <label for="name">Last Name</label><br />
+      <input
+        type="text"
+        placeholder="Last Name"
+        name="passwordInput"
+        [(ngModel)]="passwordInput"
+        value="{{passwordInput}}"
+      /><br />
+      <label for="password">Password</label><br />
+      <input
+        type="password"
+        placeholder="password"
+        name="passwordInput"
+        [(ngModel)]="passwordInput"
+        value="{{passwordInput}}"
+      /><br />
+      <label for="password">Repeat Password</label><br />
+      <input type="password" name="lastname" value="Mouse" /><br />
+      <label for="avatar">Select image to upload</label><br />
+      <input type="file" />
+      <label>
+        <button type="button" class="login" (click)="onSignup(signupForm)">
+          Sign Up
+        </button>
+        <input type="checkbox" checked="checked" name="remember" /> Remember me
+      </label>
+
+      <a routerLink="/" class="go-back">Go Back</a>
+    </fieldset>
+  </form>
 
