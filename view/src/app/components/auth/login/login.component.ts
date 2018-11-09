@@ -15,9 +15,6 @@ export class LoginComponent implements OnInit {
   }
 
   signInForm(form: NgForm) {
-    console.log(form.value.emailInput, form.value.passwordInput);
-    // console.log('hello')
-
     this.authService.signin(form.value.emailInput, form.value.passwordInput)
   }
 

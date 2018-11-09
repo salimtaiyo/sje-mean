@@ -34,7 +34,6 @@ mongoose
 // routers
 app.use('/', userRouter); // login && logout routers
 
-
 // running it on the localhost:3000
 app.listen(serverPath, () => {
     console.log('the project is running on ' + serverPath)
