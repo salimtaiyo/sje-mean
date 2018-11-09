@@ -25,13 +25,13 @@ export class AuthService {
     const authData: AuthData = { email, password};
     // console.log(authData.email)
     this.http
-        .post("http://locahost:3000/login", authData)
+        .post("http://localhost:3000/login", authData)
         .subscribe(res => {
           console.log(res, "logged in")
         },
         error => {
           console.log(error)
         })
-      
+
   }
 }

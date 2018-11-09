@@ -14,10 +14,10 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  signInForm(form: NgForm){
+  signInForm(form: NgForm) {
     console.log(form.value.emailInput, form.value.passwordInput);
     // console.log('hello')
-    
+
     this.authService.signin(form.value.emailInput, form.value.passwordInput)
   }
 
