@@ -1,0 +1,9 @@
+<app-header></app-header>
+
+
+<form #loginForm="ngForm">
+  <input type="text" placeholder="email" name="emailInput" [(ngModel)]="emailInput" value={{emailInput}}>
+  <input type="password" placeholder="password" name="passwordInput" [(ngModel)]="passwordInput" value={{passwordInput}}>
+  <button (click)="signInForm(loginForm)"> login </button>
+</form>
+
