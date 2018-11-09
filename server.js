@@ -7,6 +7,7 @@ const serverPath = 3000; // localhost server
 
 // importing routers
 const userRouter = require('./routing/user.js');
+const dataRouter = require('./routing/data');
 
 // middleware 
 app.use(express.json());
@@ -16,8 +17,10 @@ app.use(cors());
 // database 
 mongoose
   .connect(
-     "mongodb+srv://shal1231:Shal1231@cluster0-wlagw.mongodb.net/test?retryWrites=true",
+
+    //  "mongodb+srv://shal1231:Shal1231@cluster0-wlagw.mongodb.net/test?retryWrites=true",
     // "mongodb+srv://elvis992035:8xIsLt5pI8AzZhiS@cluster0-wvkpb.mongodb.net/test?retryWrites=true",
+    "mongodb://localhost/testauth",
     {useNewUrlParser: true}
   )
   .then(() => {
@@ -33,6 +36,7 @@ mongoose
 
 // routers
 app.use('/', userRouter); // login && logout routers
+app.use('/', dataRouter); // data router
 
 // running it on the localhost:3000
 app.listen(serverPath, () => {
