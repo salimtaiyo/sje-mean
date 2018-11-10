@@ -20,6 +20,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material';
 import { MatMenuModule, MatButtonModule, MatIconModule, MatCardModule, MatSidenavModule } from '@angular/material';
 import { MatCheckboxModule } from '@angular/material';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 
 
@@ -31,6 +32,7 @@ import { MatCheckboxModule } from '@angular/material';
     ResourcesTableComponent,
     HeaderComponent,
     NavbarComponent,
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,
