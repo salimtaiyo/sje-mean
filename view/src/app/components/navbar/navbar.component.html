@@ -1,16 +1,64 @@
-<mat-card class="demo-panel">
-  <mat-card-title> Angular Material Sidebar Demo </mat-card-title>
-  <mat-card-content>
-    <mat-sidenav-container class = "example-container">
-      <mat-sidenav #sidenav class = "example-sidenav">
-        Sidenav content goes here!
-      </mat-sidenav>
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+  integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+  crossorigin="anonymous"
+/>
 
-      <div class = "example-sidenav-content">
-        <button type = "button" mat-button (click) = "sidenav.open()">
-          Open Sidenav
-        </button>
-      </div>
-    </mat-sidenav-container>
-  </mat-card-content>
-</mat-card>
+<!--
+  <mat-card class="demo-panel">
+
+    <mat-card-content>
+
+
+      <mat-sidenav-container class="example-container">
+
+
+        <div class="example-sidenav-content">
+
+
+          <button type="button" mat-button (click)="sidenav.open()">
+
+
+            <i class="fas fa-arrow-circle-right fa-2x"></i>
+
+
+          </button>
+
+
+        </div>
+
+
+
+
+        <mat-sidenav #sidenav class="example-sidenav" mode="push">
+
+
+          Sidenav content goes here!
+
+
+        </mat-sidenav>
+
+
+      </mat-sidenav-container>
+
+
+    </mat-card-content>
+
+
+  </mat-card>
+-->
+
+<mat-sidenav-container>
+
+  <mat-sidenav #sidenav mode = "side" opened = "false">
+    <a routerLink="/signup"> Sign Up</a>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <button type="button" mat-button (click)="sidenav.toggle()">
+      <i class="fas fa-arrow-circle-right fa-2x"></i>
+    </button>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
