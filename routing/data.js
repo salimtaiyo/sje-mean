@@ -4,12 +4,23 @@ const Data = require('../modal/data');
 
 const router = express.Router();
 
+// router.get('/data', (req,res) => {
+//     Data.find({}, (request,response) => {
+//         // console.log(res);
+//         res.json({ response})
+//     })
+// })
+
 router.get('/data', (req,res) => {
-    Data.find({}, (request,response) => {
-        // console.log(res);
-        res.json({ response})
+    Data.find().then(doc => {
+        res.json({
+            message: "successfully pulled",
+            data:doc
+        })
     })
 })
+
+
 router.post("/data", (req,res) => {
     // the new data thats being created
     const data = new Data({

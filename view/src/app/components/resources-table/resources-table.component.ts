@@ -7,14 +7,12 @@ import { PostsService } from 'src/app/service/posts.service';
   styleUrls: ['./resources-table.component.css']
 })
 export class ResourcesTableComponent implements OnInit {
-  
+  tableData:any;
   constructor(private dataService: PostsService) { }
 
   ngOnInit() {
     this.dataService.getData().subscribe(
-      res => {
-      console.log((res));
-      }
+      res => this.tableData = res['data']
     )
   }
 

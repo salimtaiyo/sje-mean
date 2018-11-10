@@ -1,6 +1,7 @@
 <app-header></app-header>
 <app-navbar></app-navbar>
 
-<p>
-  resources-table works!
+<p *ngFor="let i of tableData">
+  {{i.code}}
+  {{i.resource}}
 </p>
