@@ -10,34 +10,20 @@
 
 <div class="wrapper">
   <app-search-bar></app-search-bar>
-  <table>
+  <table *ngIf="users; else: emptyDb">
     <tr>
       <th>Resource Name</th>
       <th>Resource Code</th>
     </tr>
-    <tr>
-      <td>Alfreds Futterkiste</td>
-      <td>0200001</td>
-    </tr>
-    <tr>
-      <td>Centro comercial Moctezuma</td>
-      <td>0400001</td>
-    </tr>
-    <tr>
-      <td>Ernst Handel</td>
-      <td>0200031</td>
-    </tr>
-    <tr>
-      <td>Island Trading</td>
-      <td>0330001</td>
-    </tr>
-    <tr>
-      <td>Laughing Bacchus Winecellars</td>
-      <td>0666601</td>
-    </tr>
-    <tr>
-      <td>Magazzini Alimentari Riuniti</td>
-      <td>0330001</td>
+    <tr *ngFor="let user of users.data">
+      <td>{{ user.first_name }}</td>
+      <td>{{ user.last_name }}</td>
     </tr>
   </table>
 </div>
+<ng-template #emptyDb
+  ><h1>
+    Your Database is currently empty or your not properly connnected to it.
+  </h1>
+  .</ng-template
+>
