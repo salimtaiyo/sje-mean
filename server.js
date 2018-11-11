@@ -18,9 +18,9 @@ app.use(cors());
 mongoose
   .connect(
 
-    //  "mongodb+srv://shal1231:Shal1231@cluster0-wlagw.mongodb.net/test?retryWrites=true",
+     "mongodb+srv://shal1231:Shal1231@cluster0-wlagw.mongodb.net/test?retryWrites=true",
     // "mongodb+srv://elvis992035:8xIsLt5pI8AzZhiS@cluster0-wvkpb.mongodb.net/test?retryWrites=true",
-    "mongodb://localhost/testauth",
+    // "mongodb://localhost/testauth",
     {useNewUrlParser: true}
   )
   .then(() => {
