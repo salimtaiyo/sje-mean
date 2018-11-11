@@ -12,11 +12,14 @@
     </form>
   </div>
   <h5>Resource catalog</h5>
-
-  <div class="dropdown">
-    <div class="dropbtn"><i class="fas fa-plus-square orange fa-lg"></i></div>
-    <div class="dropdown-content">
-      <a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link 3</a>
+  <div class="iconx">
+    <div class="dropdown" (click)="show = !show">
+      <i class="fas fa-plus-square orange fa-lg '"></i>
+      <div class="dropdown-content" *ngIf="show">
+        <a href="#"><i class="fas fa-align-left columIcon"></i>Add Row</a>
+        <a href="#"><i class="fas fa-columns columIcon"></i>Add Collumn</a>
+        <a href="#"><i class="far fa-file-excel columIcon"></i>Import CSV</a>
+      </div>
     </div>
   </div>
 </div>
