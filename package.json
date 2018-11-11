@@ -1,0 +1,31 @@
+{
+  "name": "sjt-mean",
+  "version": "1.0.0",
+  "description": "angular mongodb project",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salimtaiyo/sje-mean.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/salimtaiyo/sje-mean/issues"
+  },
+  "homepage": "https://github.com/salimtaiyo/sje-mean#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.2",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.3.11",
+    "mongoose-unique-validator": "^2.0.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^0.10.5",
+    "nodemon": "^1.18.6"
+  }
+}

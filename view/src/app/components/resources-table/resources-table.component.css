@@ -1,0 +1,5 @@
+
+
+span:focus ~ .to-be-changed {
+	color: red;
+}

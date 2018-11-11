@@ -1,0 +1,20 @@
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+  integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+  crossorigin="anonymous"
+/>
+
+<mat-sidenav-container>
+
+  <mat-sidenav #sidenav mode = "side" opened = "false">
+    <a routerLink="/signup"> Sign Up</a>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <button type="button" mat-button (click)="sidenav.toggle()">
+      <i class="fas fa-arrow-circle-right fa-2x"></i>
+    </button>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
