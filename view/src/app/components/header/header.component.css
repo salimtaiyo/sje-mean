@@ -12,19 +12,20 @@ button {
   display: inline-block;
   padding: 5px 6px;
   text-align: center;
-  cursor: pointer;  
+  cursor: pointer;
   font-weight: bold;
 }
 
 .logo {
-  background-color: orange;     
-  text-align: left; 
-  height: 65px;     
+  background-color: orange;
+  text-align: left;
+  height: 65px;
 }
 
 .personInfo {
   cursor: pointer;
   position: relative;
+  display: inline-block;
 }
 
 .popup {
@@ -37,34 +38,6 @@ button {
   user-select: none;
 }
 
-/* The actual popup */
-.popup .popuptext {
-  visibility: hidden;
-  width: 160px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -80px;
-}
-
-/* Popup arrow */
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
 
 /* Toggle this class - hide and show the popup */
 .popup .show {
@@ -75,7 +48,7 @@ button {
 
 /* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
-  from {opacity: 0;} 
+  from {opacity: 0;}
   to {opacity: 1;}
 }
 
@@ -84,32 +57,27 @@ button {
   to {opacity:1 ;}
 }
 
-.dialog .buttonSpan {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s;
-}
 
  .personInfo span.dialog {
   position: absolute;
-  display: block;  
+  display: block;
 }
 
 .personInfo span.buttonSpan {
   position: absolute;
-  display: block;  
-} 
+  display: block;
+}
 
 span.dialog {
 
-  background:black;    
+  background:black;
     color: white;
     font-size: 13px;
     width: 200px;
     height: 150px;
     letter-spacing: 1px;
-    line-height: 30px;
-    position: relative;
+    line-height: 10px;
+    position: absolute;
     text-align: center;
     text-transform: uppercase;
     top: 57px;
@@ -117,28 +85,28 @@ span.dialog {
     display:none;
     padding:0 20px;
     z-index: 5;
-  
+
 }
 
  span.buttonSpan {
 
-  background:rgb(185, 178, 178);    
+  background:rgb(185, 178, 178);
     color: white;
     font-size: 13px;
     width: 200px;
     height: 50px;
     letter-spacing: 1px;
     line-height: 30px;
-    position: relative;
+    position: absolute;
     text-align: center;
     text-transform: uppercase;
     top: 157px;
     left: -100px;
     display:none;
     padding:0 20px;
-    z-index: 8;
-  
-} 
+    z-index: 5;
+
+}
 
 /* Popup arrow */
 
@@ -152,7 +120,7 @@ span.dialog:after {
     border-bottom:5px solid black;
     border-right:5px solid black;
     background:black;
-    left:48%;    
+    left:48%;
     margin-left:-5px;
     -moz-transform:rotate(225deg);
     -webkit-transform:rotate(225deg);
