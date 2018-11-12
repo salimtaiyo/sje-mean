@@ -20,12 +20,18 @@
       <td>{{ user.code }}</td>
     </tr>
 
-<!--  <tr>
-  <td> <input [(ngModel)]="resName"></td>
-  <td> {{resName}}</td>
-</tr> -->
+      <tr>
+          <td><input [(ngModel)]="resourceName">  </td>
+          <td> <input type="number" [(ngModel)]="resourceCode"></td>
+
+      </tr>
+     <tr>
+        <button (click)="addForm(resourceName, resourceCode)"> ADD </button>
+     </tr>
 
   </table>
+
+
 
   <!-- <form #addForm="ngForm">
           <td> <input name="resName" [(ngModel)]="resName" value="{{resName}}" type="text" placeholder="Resource name"> </td>

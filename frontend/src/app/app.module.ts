@@ -11,22 +11,18 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { ResourcesTableComponent } from './components/resources-table/resources-table.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 import { AccordionModule } from 'primeng/accordion';
 import { MenuItem } from 'primeng/api';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from '@angular/material';
-import {
-  MatMenuModule,
-  MatButtonModule,
-  MatIconModule,
-  MatCardModule,
-  MatSidenavModule
-} from '@angular/material';
+import { MatMenuModule, MatButtonModule, MatIconModule, MatCardModule, MatSidenavModule } from '@angular/material';
 import { MatCheckboxModule } from '@angular/material';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
+
+
 
 @NgModule({
   declarations: [
@@ -42,6 +38,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     AccordionModule,
 
     BrowserAnimationsModule,
@@ -53,10 +50,9 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     MatIconModule,
     MatCardModule,
     MatSidenavModule,
-    MatToolbarModule,
-    HttpClientModule
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
