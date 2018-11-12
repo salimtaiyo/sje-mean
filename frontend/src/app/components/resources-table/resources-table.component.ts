@@ -10,8 +10,8 @@ import { NgForm } from '@angular/forms';
 })
 export class ResourcesTableComponent implements OnInit {
   users: Object;
-  pagesize:number = 0 ;
-  page:number = 5;
+  pagesize:number = 0;
+  page:number = 20;
   constructor(private data: MydataService) {}
 
   ngOnInit() {
@@ -20,7 +20,7 @@ export class ResourcesTableComponent implements OnInit {
     });
   }
 
-  addFormFunc(form:NgForm){
-    console.log(form.value);
+  addForm(x,u){
+    this.data.postUser(x,u);
   }
 }

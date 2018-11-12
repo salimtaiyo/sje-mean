@@ -11,24 +11,11 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { ResourcesTableComponent } from './components/resources-table/resources-table.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 import { AccordionModule } from 'primeng/accordion';
 import { MenuItem } from 'primeng/api';
 
-<<<<<<< HEAD
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { MatToolbarModule } from '@angular/material';
-import {
-  MatMenuModule,
-  MatButtonModule,
-  MatIconModule,
-  MatCardModule,
-  MatSidenavModule
-} from '@angular/material';
-import { MatCheckboxModule } from '@angular/material';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
-=======
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from '@angular/material';
@@ -36,7 +23,6 @@ import { MatMenuModule, MatButtonModule, MatIconModule, MatCardModule, MatSidena
 import { MatCheckboxModule } from '@angular/material';
 
 
->>>>>>> 6ad867fa77d016a6a1ccd43abcaaed2b168a9e2c
 
 @NgModule({
   declarations: [
@@ -46,19 +32,13 @@ import { MatCheckboxModule } from '@angular/material';
     ResourcesTableComponent,
     HeaderComponent,
     NavbarComponent,
-<<<<<<< HEAD
     SearchBarComponent
-=======
->>>>>>> 6ad867fa77d016a6a1ccd43abcaaed2b168a9e2c
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-<<<<<<< HEAD
-=======
     HttpClientModule,
->>>>>>> 6ad867fa77d016a6a1ccd43abcaaed2b168a9e2c
     AccordionModule,
 
     BrowserAnimationsModule,
@@ -70,18 +50,9 @@ import { MatCheckboxModule } from '@angular/material';
     MatIconModule,
     MatCardModule,
     MatSidenavModule,
-<<<<<<< HEAD
-    MatToolbarModule,
-    HttpClientModule
-=======
     MatToolbarModule
->>>>>>> 6ad867fa77d016a6a1ccd43abcaaed2b168a9e2c
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-<<<<<<< HEAD
-export class AppModule {}
-=======
 export class AppModule { }
->>>>>>> 6ad867fa77d016a6a1ccd43abcaaed2b168a9e2c

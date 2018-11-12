@@ -11,10 +11,7 @@
   },
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-=======
     "@angular/animation": "^4.0.0-beta.8",
->>>>>>> 6ad867fa77d016a6a1ccd43abcaaed2b168a9e2c
     "@angular/animations": "github:angular/animations-builds",
     "@angular/cdk": "github:angular/cdk-builds",
     "@angular/common": "^6.1.0",
@@ -26,13 +23,6 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
-<<<<<<< HEAD
-    "bootstrap": "^3.3.7",
-    "core-js": "^2.5.4",
-    "primeicons": "^1.0.0",
-    "primeng": "^7.0.0-beta.1",
-    "rxjs": "~6.2.0",
-=======
     "angular-material-source": "github:angular/material",
     "bootstrap": "^3.3.7",
     "core-js": "^2.5.4",
@@ -43,7 +33,6 @@
     "primeng": "^7.0.0-beta.1",
     "rxjs": "~6.2.0",
     "save": "^2.3.2",
->>>>>>> 6ad867fa77d016a6a1ccd43abcaaed2b168a9e2c
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
