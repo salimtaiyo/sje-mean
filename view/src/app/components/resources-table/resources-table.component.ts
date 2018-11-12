@@ -5,11 +5,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './resources-table.component.html',
   styleUrls: ['./resources-table.component.css']
 })
-export class ResourcesTableComponent implements OnInit {
+export class ResourcesTableComponent implements OnInit { 
 
-  constructor() { }
+  constructor() {
+    
+  } 
 
   ngOnInit() {
+   
   }
 
 }

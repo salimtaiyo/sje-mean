@@ -4,29 +4,14 @@
   <fieldset>
     <legend>Login</legend>
     <label for="username">Username</label> <br />
-    <input
-      type="text"
-      name="emailInput"
-      [(ngModel)]="emailInput"
-      value="{{emailInput}}"
-    /><br />
+    <input type="text" name="emailInput" [(ngModel)]="emailInput" value="{{emailInput}}" /><br />
     <label for="password">Password</label><br />
-    <input
-      type="password"
-      name="passwordInput"
-      [(ngModel)]="passwordInput"
-      value="{{passwordInput}}"
-    /><br /><br />
+    <input type="password" name="passwordInput" [(ngModel)]="passwordInput" value="{{passwordInput}}" /><br /><br />
     <label>
       <button type="button" class="login" (click)="signInForm(loginForm)">
         Log in
       </button>
-      <input
-        type="checkbox"
-        checked="checked"
-        name="remember"
-        style="margin-bottom:15px"
-      />
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px" />
       Remember me
     </label>
 

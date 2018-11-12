@@ -24,19 +24,22 @@
 
   <!-- User Info -->
 
-  <span>
-    <label class="personInfo" tabindex="0"><i class="fas fa-user-circle fa-2x" style="margin: 0 .5rem"></i>
-      <span class="dialog">
-        <br> Cost Manager
-        <br> Member since
-        <br> November-2015
-      </span>
-      <span class="buttonSpan">
-        <div style="display: inline-block; vertical-align: middle; height: 100%;">
-        </div>
-        <button style="margin-right: 80px;"> profile </button>
-        <a class = "signOut" routerLink = "../"><button> sign out </button></a>
-      </span>
+  <span>    
+
+    <label class="personInfo" ><i (click)="show = !show" class="fas fa-user-circle fa-2x" style="margin: 0 .5rem"></i>
+       <div *ngIf = "show">
+        <span class="dialog">
+          <br> Cost Manager
+          <br> Member since      
+          <br> November-2015
+        </span>
+        <span class="buttonSpan">
+          <div style="display: inline-block; vertical-align: middle; height: 100%;">
+          </div>
+          <button style="margin-right: 80px;"> profile </button>
+          <button (click) = "signOut()" routerLink='../'> sign out </button>
+        </span>
+      </div> 
     </label>
 
     <label style="margin: 0 .5rem"> Cost Manager </label>
