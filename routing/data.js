@@ -12,7 +12,16 @@ const router = express.Router();
 // })
 
 router.get('/data', (req,res) => {
-    Data.find().then(doc => {
+    const pageSize = +req.query.pagesize;
+    const currentPage = +req.query.page;
+    console.log(pageSize, currentPage);
+    const dataFind = Data.find();
+
+    if(pageSize==0 && currentPage){
+        dataFind.skip(0).limit(5);
+    }
+
+    dataFind.then(doc => {
         res.json({
             message: "successfully pulled",
             data:doc

@@ -7,7 +7,8 @@ import { HttpClient } from '@angular/common/http';
 export class MydataService {
   constructor(private http: HttpClient) {}
 
-  getUser() {
-    return this.http.get('http://localhost:3000/data');
+  getUser(pagesize:number,page:number) {
+    const paginationQuery = `?pagesize=${pagesize}&page=${page}`;
+    return this.http.get('http://localhost:3000/data'+ paginationQuery);
   }
 }
