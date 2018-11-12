@@ -20,26 +20,54 @@
       <td>{{ user.code }}</td>
     </tr>
 
-      <tr>
-          <td><input [(ngModel)]="resourceName">  </td>
-          <td> <input type="number" [(ngModel)]="resourceCode"></td>
-
-      </tr>
-     <tr>
-        <button (click)="addForm(resourceName, resourceCode)"> ADD </button>
-     </tr>
-
+    <tr>
+      <td>
+        <input
+          [(ngModel)]="resourceName"
+          type="text"
+          name="textInput"
+          [(ngModel)]="textInput"
+          value="{{textInput}}"
+        />
+      </td>
+      <td>
+        <input
+          type="number"
+          name="numberInput"
+          [(ngModel)]="numberInput"
+          value="{{numberInput}}"
+        />
+      </td>
+    </tr>
+    <tr>
+      <button
+        type="button"
+        class="enterNDiscard"
+        ((click)="addForm(resourceName, resourceCode)"
+      >
+        Enter
+      </button>
+      <button
+        type="button"
+        class="enterNDiscard"
+        ((click)="addForm(resourceName, resourceCode)"
+      >
+        Discard
+      </button>
+    </tr>
   </table>
 
-
-
-  <!-- <form #addForm="ngForm">
-          <td> <input name="resName" [(ngModel)]="resName" value="{{resName}}" type="text" placeholder="Resource name"> </td>
-          <td> <input name="resCode" [(ngModel)]="resCode" value="{{resCode}}" type="text" placeholder="Resource name"> </td>  
-          <button (click)="addFormFunc(addForm)"> Add </button>  
-    </form>
-</div> -->
-<ng-template #emptyDb>
-  <h1>Your Database is currently empty or your not properly connnected to it.</h1>
-  </ng-template
->
+  <!--
+    <form #addForm="ngForm">
+              <td> <input name="resName" [(ngModel)]="resName" value="{{resName}}" type="text" placeholder="Resource name"> </td>
+              <td> <input name="resCode" [(ngModel)]="resCode" value="{{resCode}}" type="text" placeholder="Resource name"> </td>
+              <button (click)="addFormFunc(addForm)"> Add </button>
+        </form>
+    </div>
+  -->
+  <ng-template #emptyDb>
+    <h1>
+      Your Database is currently empty or your not properly connnected to it.
+    </h1>
+  </ng-template>
+</div>
