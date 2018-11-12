@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PostsService } from 'src/app/service/posts.service';
+import { MydataService } from '../../service/mydata.service';
+import { Subscriber } from 'rxjs';
 
 @Component({
   selector: 'app-resources-table',
@@ -7,13 +8,14 @@ import { PostsService } from 'src/app/service/posts.service';
   styleUrls: ['./resources-table.component.css']
 })
 export class ResourcesTableComponent implements OnInit {
-  tableData:any;
-  constructor(private dataService: PostsService) { }
+  users: Object;
+  constructor(private data: MydataService) {}
 
   ngOnInit() {
-    this.dataService.getData().subscribe(
-      res => this.tableData = res['data']
-    )
+    this.data.getUser().subscribe(data => {
+      this.users = data['data'];
+      // console.log(this.users);
+      // console.log(data['data'])
+    });
   }
-
 }

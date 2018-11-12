@@ -10,14 +10,22 @@
 
 <div class="wrapper">
   <app-search-bar></app-search-bar>
-  <table *ngFor="let i of tableData">
+  <table *ngIf="users; else: emptyDb">
     <tr>
       <th>Resource Name</th>
       <th>Resource Code</th>
     </tr>
+    <tr *ngFor="let user of users">
+      <td>{{ user.resource }}</td>
+      <td>{{ user.code }}</td>
+    </tr>
     <tr>
-      <td> {{ i.resource }}</td>
-      <td> {{ i.code }}</td>
+      <td> input</td>
+      <td> input</td>
     </tr>
   </table>
 </div>
+<ng-template #emptyDb>
+  <h1>Your Database is currently empty or your not properly connnected to it.</h1>
+  </ng-template
+>

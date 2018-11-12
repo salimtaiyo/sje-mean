@@ -15,14 +15,18 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AccordionModule } from 'primeng/accordion';
 import { MenuItem } from 'primeng/api';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from '@angular/material';
-import { MatMenuModule, MatButtonModule, MatIconModule, MatCardModule, MatSidenavModule } from '@angular/material';
+import {
+  MatMenuModule,
+  MatButtonModule,
+  MatIconModule,
+  MatCardModule,
+  MatSidenavModule
+} from '@angular/material';
 import { MatCheckboxModule } from '@angular/material';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
-
-
 
 @NgModule({
   declarations: [
@@ -32,13 +36,12 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     ResourcesTableComponent,
     HeaderComponent,
     NavbarComponent,
-    SearchBarComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
     AccordionModule,
 
     BrowserAnimationsModule,
@@ -50,9 +53,10 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     MatIconModule,
     MatCardModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
