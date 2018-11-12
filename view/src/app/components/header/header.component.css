@@ -6,4 +6,128 @@ span {
 
 }
 
+button {
+  background-color: white;
+  border: none;
+  display: inline-block;
+  padding: 5px 6px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logo {
+  background-color: orange;
+  text-align: left;
+  height: 65px;
+}
+
+.personInfo {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+/* .popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+} */
+
+
+/* Toggle this class - hide and show the popup */
+/* .popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+} */
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+
+ .personInfo span.dialog {
+  position: absolute;
+  display: block;
+}
+
+.personInfo span.buttonSpan {
+  position: absolute;
+  display: block;
+}
+
+span.dialog {
+
+  background:black;
+    color: white;
+    font-size: 13px;
+    width: 200px;
+    height: 150px;
+    letter-spacing: 1px;
+    line-height: 10px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 57px;
+    left: -100px;
+    display:none;
+    padding:0 20px;
+    z-index: 5;
+
+}
+
+ span.buttonSpan {
+
+  background:rgb(185, 178, 178);
+    color: white;
+    font-size: 13px;
+    width: 200px;
+    height: 50px;
+    letter-spacing: 1px;
+    line-height: 30px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 157px;
+    left: -100px;
+    display:none;
+    padding:0 20px;
+    z-index: 5;
+
+}
+
+/* Popup arrow */
+
+span.dialog:after {
+
+  content:'';
+    position:absolute;
+    top:-14px;
+    width:22px;
+    height:22px;
+    border-bottom:5px solid black;
+    border-right:5px solid black;
+    background:black;
+    left:48%;
+    margin-left:-5px;
+    -moz-transform:rotate(225deg);
+    -webkit-transform:rotate(225deg);
+    transform:rotate(225deg);
+
+}
+
+
+
 

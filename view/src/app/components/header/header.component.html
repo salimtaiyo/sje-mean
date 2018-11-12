@@ -1,13 +1,49 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+  crossorigin="anonymous">
 
-  <div style = "border-bottom: 2px solid black">
-    <span>
-      <img class="logo" src="http://placehold.it/150x60" alt="logo" style = "padding-top: .5rem">
-    </span>
-    <span style="width: 60%;"> <h1>Project1</h1> </span>
-    <span class = "headerIcon" >
-      <a src = "localhost:4200/login"><i class="fas fa-user-circle fa-2x" style = "margin: 0 .5rem"></i></a>
-      <label style = "margin: 0 .5rem"> Cost Manager </label>
-      <i class="fas fa-question-circle fa-2x" style = "margin: 0 .5rem"></i>
-    </span>
-  </div>
+<div style="border-bottom: 2px solid black">
 
+  <!-- logo -->
+
+  <span class="logo">
+    <div style="display: inline-block; vertical-align: middle; height: 100%;">
+    </div>
+    <div style="display: inline-block; vertical-align: middle;">
+      <i class="fas fa-th-large fa-2x" style="color:white;"></i>
+    </div>
+    <div style="display: inline-block; vertical-align: bottom; margin: 0 5px;">
+      <p style="color: white;"> Resource Management </p>
+    </div>
+
+    <!-- Title -->
+
+  </span>
+  <span style="width: 60%;">
+    <h1>Project1</h1>
+  </span>
+
+  <!-- User Info -->
+
+  <span>
+
+    <label class="personInfo" ><i (click)="show = !show" class="fas fa-user-circle fa-2x" style="margin: 0 .5rem"></i>
+       <div *ngIf = "show">
+        <span class="dialog" >
+          <p style = "visibility: hidden;"> .. </p>
+          <p style = "font-size: 1.2em;"> Cost Manager </p>
+          <p style = "font-size: .8em;"> Member since </p>
+          <p style = "font-size: .8em;"> November-2015 </p>
+        </span>
+        <span class="buttonSpan">
+          <div style="display: inline-block; vertical-align: middle; height: 100%;">
+          </div>
+          <button style="margin-right: 80px;"> profile </button>
+          <button (click) = "signOut()" routerLink='../'> sign out </button>
+        </span>
+      </div>
+    </label>
+
+    <label style="margin: 0 .5rem"> Cost Manager </label>
+    <i class="fas fa-question-circle fa-2x" style="margin: 0 .5rem"></i>
+  </span>
+</div>

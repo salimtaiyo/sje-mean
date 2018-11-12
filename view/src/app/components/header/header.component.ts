@@ -7,9 +7,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  // popup;
+
+  show: boolean;
+
+  constructor() { 
+    
+  }
 
   ngOnInit() {
+    this.show = false;
   }
+
+  ngDoCheck() {
+    
+  }
+
+  public signOut() {
+
+    console.log("Sign Out");
+
+    localStorage.removeItem("token");
+    localStorage.removeItem("expiration");
+
+  }
+
+  // public personInfo(event) {
+
+  //   console.log("works");
+
+  //   this.popup = document.getElementById("InfoPopup");
+  //   this.popup.classList.toggle("show");    
+  // }
 
 }
