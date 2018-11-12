@@ -15,7 +15,7 @@
   border-radius: 0% 40% 40% 0%;
   position: absolute;
   left: 135px;
-  top: 105px;
+  top: 89px;
   z-index: 0;
 }
 /* ======================================================================================== */
@@ -30,7 +30,7 @@ body {
   width: 136px;
   position: absolute;
   z-index: 1;
-  top: 106px;
+  top: 89px;
   left: 0;
   background-color: #111;
   overflow-x: hidden;
