@@ -28,7 +28,7 @@ button {
   display: inline-block;
 }
 
-.popup {
+/* .popup {
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -36,15 +36,15 @@ button {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
+} */
 
 
 /* Toggle this class - hide and show the popup */
-.popup .show {
+/* .popup .show {
   visibility: visible;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
-}
+} */
 
 /* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
