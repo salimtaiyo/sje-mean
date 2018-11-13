@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const User = require('../modal/user'); // from the modal
 
 const router = express.Router();
+// const request = require('request');
 
 // signup (localhost:3000/signup)
 router.post("/signup", (req,res) => {
@@ -57,13 +58,28 @@ router.post("/login", (req,res) => {
                 "secret_longer",
                 { expiresIn: "1h" } 
             );
+            // 
+            const name = findUser.name;
+            const lastname = findUser.lastname;
 
             res.json({
-                token: token,
+                name,
+                lastname,
+                token,
                 expiresIn: 10000 // ???? 
             });
         })
         .catch( err => { console.log(err) })
+})
+
+// get information
+router.get('/info', (req,res) =>{
+    User.find({})
+        .then(data => {
+            res.json({
+                data
+            })
+        })
 })
 
 

@@ -50,6 +50,7 @@ export class ResourcesTableComponent implements OnInit, OnChanges {
   // ngDoCheck(){
   //   this.addForm();
   // }
+  
   // invoked from the  child component 
   onNotifyClicked(message:Boolean):void{
     this.status = !this.status;

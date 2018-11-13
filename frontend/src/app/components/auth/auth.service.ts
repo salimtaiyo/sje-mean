@@ -12,6 +12,9 @@ export class AuthService {
   private isAuth = false;
   private timer:any;
 
+  name:string;
+  lastname:string;
+
   constructor(private http: HttpClient, private router: Router) { }
 
   //  ##### these methods are invoked from the other COMPONENTS #####
@@ -35,12 +38,19 @@ export class AuthService {
   // login
   signin(email:string, password: string){
     const authData = { email, password};
-    // console.log(authData.email)
     this.http
-        .post<{token: string; expiresIn:number}>("http://localhost:3000/login", authData)
+        .post<{name:string; lastname:string; token: string; expiresIn:number}>("http://localhost:3000/login", authData)
         .subscribe(res => {
+          console.log(res);
+
           const token = res.token;
+          const name = res.name;
+          const lastname = res.lastname;
+
           this.token = token;
+          this.name = res.name;
+          this.lastname = res.lastname;
+
           if(token) {
             const expiresIn = res.expiresIn;
             this.setAuthTimer(expiresIn); // auth timer
@@ -53,7 +63,6 @@ export class AuthService {
 
             //navigate
             this.router.navigate(["/resource"])
-
           }
         })
   }
@@ -84,5 +93,10 @@ export class AuthService {
   clearLocalstorage(){
     localStorage.removeItem("token");
     localStorage.removeItem("expiration");
+  }
+
+  // send name 
+  sendName(){
+    this.name, this.lastname
   }
 }
