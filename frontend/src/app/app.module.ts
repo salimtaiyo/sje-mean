@@ -21,6 +21,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material';
 import { MatMenuModule, MatButtonModule, MatIconModule, MatCardModule, MatSidenavModule } from '@angular/material';
 import { MatCheckboxModule } from '@angular/material';
+import { ProjectTableComponent } from './components/project-table/project-table.component';
+import { Project2TableComponent } from './components/project2-table/project2-table.component';
 
 
 
@@ -32,7 +34,9 @@ import { MatCheckboxModule } from '@angular/material';
     ResourcesTableComponent,
     HeaderComponent,
     NavbarComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    ProjectTableComponent,
+    Project2TableComponent
   ],
   imports: [
     BrowserModule,
