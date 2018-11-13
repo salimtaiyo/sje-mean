@@ -9,14 +9,15 @@
 />
 
 <div class="wrapper">
-  <app-search-bar></app-search-bar>
+  <app-search-bar (typingString)="getData($event)"></app-search-bar>
+
   <table *ngIf="users; else: emptyDb">
     <tr>
       <th>Resource Name</th>
       <th>Resource Code</th>
     </tr>
-    <tr *ngFor="let user of users">
-      <td>{{ user.resource }}</td>
+    <tr *ngFor="let user of users | filter : searchText">
+      <td >{{ user.resource }}</td>
       <td>{{ user.code }}</td>
     </tr>
 
@@ -35,8 +36,8 @@
 
   <!-- <form #addForm="ngForm">
           <td> <input name="resName" [(ngModel)]="resName" value="{{resName}}" type="text" placeholder="Resource name"> </td>
-          <td> <input name="resCode" [(ngModel)]="resCode" value="{{resCode}}" type="text" placeholder="Resource name"> </td>  
-          <button (click)="addFormFunc(addForm)"> Add </button>  
+          <td> <input name="resCode" [(ngModel)]="resCode" value="{{resCode}}" type="text" placeholder="Resource name"> </td>
+          <button (click)="addFormFunc(addForm)"> Add </button>
     </form>
 </div> -->
 <ng-template #emptyDb>

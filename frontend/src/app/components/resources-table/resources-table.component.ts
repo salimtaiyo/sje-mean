@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MydataService } from '../../service/mydata.service';
 import { Subscriber } from 'rxjs';
 import { NgForm } from '@angular/forms';
+import { FilterPipe } from './filter.pipe';
 
 @Component({
   selector: 'app-resources-table',
@@ -12,6 +13,18 @@ export class ResourcesTableComponent implements OnInit {
   users: Object;
   pagesize:number = 0;
   page:number = 20;
+
+  typing: string = '';
+
+  searchText: string;
+
+  getData(typing) {
+
+    this.typing = typing;
+
+    this.searchText = typing;
+  }
+
   constructor(private data: MydataService) {}
 
   ngOnInit() {

@@ -7,10 +7,11 @@
 <div class="topnav">
   <div class="search-container">
     <form>
-      <input type="text" placeholder="Keyword" name="search" />
+      <input #typingData (keyup) = "sendTypingString(typingData.value)" type="text" placeholder="Keyword" name="search">
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>
   </div>
+
   <h5>Resource catalog</h5>
   <div class="iconx">
     <div class="dropdown" (click)="show = !show">

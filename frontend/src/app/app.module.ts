@@ -12,6 +12,7 @@ import { ResourcesTableComponent } from './components/resources-table/resources-
 import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { FormulaTableComponent } from './components/formula-table/formula-table.component';
 
 import { AccordionModule } from 'primeng/accordion';
 import { MenuItem } from 'primeng/api';
@@ -21,6 +22,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material';
 import { MatMenuModule, MatButtonModule, MatIconModule, MatCardModule, MatSidenavModule } from '@angular/material';
 import { MatCheckboxModule } from '@angular/material';
+import { FilterPipe } from './components/resources-table/filter.pipe';
+
 
 
 
@@ -32,7 +35,9 @@ import { MatCheckboxModule } from '@angular/material';
     ResourcesTableComponent,
     HeaderComponent,
     NavbarComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    FormulaTableComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
