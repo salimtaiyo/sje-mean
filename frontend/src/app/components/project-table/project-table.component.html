@@ -22,42 +22,15 @@
       <th>PROJECT CODE</th>
     </tr>
 
-    <tr>
-      <td>
-        <input type="checkbox" value="a" name="checked" checked />Alfreds
-        Futterkiste
+    <tr *ngFor="let data of dataProject" >
+      <td  >
+        <input (click)="transferPick($event.target.value)" type="checkbox" name="checked" value="{{data.resource}},{{data.code}}"/>
+        {{data.resource}}
+        <br>
       </td>
-      <td>0200001</td>
+      <td> {{ data.code }}</td>
     </tr>
-    <tr>
-      <td>
-        <input type="checkbox" value="a" name="checked" />Centro comercial
-        Moctezuma
-      </td>
-      <td>0400001</td>
-    </tr>
-    <tr>
-      <td><input type="checkbox" value="a" name="checked" />Ernst Handel</td>
-      <td>0200031</td>
-    </tr>
-    <tr>
-      <td><input type="checkbox" value="a" name="checked" />Island Trading</td>
-      <td>0330001</td>
-    </tr>
-    <tr>
-      <td>
-        <input type="checkbox" value="a" name="checked" />Laughing Bacchus
-        Winecellars
-      </td>
-      <td>0666601</td>
-    </tr>
-    <tr>
-      <td>
-        <input type="checkbox" value="a" name="checked" />Magazzini Alimentari
-        Riuniti
-      </td>
-      <td>0330001</td>
-    </tr>
+    
   </table>
 </div>
 <div class="container"><app-project2-table></app-project2-table></div>
