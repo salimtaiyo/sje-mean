@@ -7,16 +7,17 @@
 <div class="topnav">
   <div class="search-container">
     <form>
-      <input type="text" placeholder="Keyword" name="search" />
+      <input #typingData (keyup) = "sendTypingString(typingData.value)" type="text" placeholder="Keyword" name="search">
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>
   </div>
+
   <h5>Resource catalog</h5>
   <div class="iconx">
     <div class="dropdown" (click)="show = !show">
       <i class="fas fa-plus-square orange fa-lg '"></i>
       <div class="dropdown-content" *ngIf="show">
-        <a href="#"><i class="fas fa-align-left columIcon"></i>Add Row</a>
+        <a (click)="onClick()"><i class="fas fa-align-left columIcon"></i>Add Row</a>
         <a href="#"><i class="fas fa-columns columIcon"></i>Add Collumn</a>
         <a href="#"><i class="far fa-file-excel columIcon"></i>Import CSV</a>
       </div>

@@ -12,19 +12,25 @@ import { ResourcesTableComponent } from './components/resources-table/resources-
 import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { FormulaTableComponent } from './components/formula-table/formula-table.component';
 
 import { AccordionModule } from 'primeng/accordion';
 import { MenuItem } from 'primeng/api';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from '@angular/material';
-import { MatMenuModule, MatButtonModule, MatIconModule, MatCardModule, MatSidenavModule } from '@angular/material';
+import {
+  MatMenuModule,
+  MatButtonModule,
+  MatIconModule,
+  MatCardModule,
+  MatSidenavModule
+} from '@angular/material';
 import { MatCheckboxModule } from '@angular/material';
 import { ProjectTableComponent } from './components/project-table/project-table.component';
 import { Project2TableComponent } from './components/project2-table/project2-table.component';
-
-
+import { FilterPipe } from './components/resources-table/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -36,7 +42,9 @@ import { Project2TableComponent } from './components/project2-table/project2-tab
     NavbarComponent,
     SearchBarComponent,
     ProjectTableComponent,
-    Project2TableComponent
+    Project2TableComponent,
+    FormulaTableComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -59,4 +67,4 @@ import { Project2TableComponent } from './components/project2-table/project2-tab
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

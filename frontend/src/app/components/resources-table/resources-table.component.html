@@ -9,62 +9,73 @@
 />
 
 <div class="wrapper">
-  <app-search-bar></app-search-bar>
+
+  <!-- search bar -->
+  <app-search-bar (notify)=onNotifyClicked() (typingString)="getData($event)"></app-search-bar>
+
   <table *ngIf="users; else: emptyDb">
     <tr>
       <th>Resource Name</th>
       <th>Resource Code</th>
     </tr>
-    <tr *ngFor="let user of users">
-      <td>{{ user.resource }}</td>
+    <tr *ngFor="let user of users | filter : searchText">
+      <td >{{ user.resource }}</td>
       <td>{{ user.code }}</td>
     </tr>
 
-    <tr>
+    <!-- hidden content -->
+    <tr *ngIf="status">
       <td>
         <input
           [(ngModel)]="resourceName"
           type="text"
-          name="textInput"
-          [(ngModel)]="textInput"
-          value="{{textInput}}"
         />
       </td>
       <td>
         <input
           type="number"
-          name="numberInput"
-          [(ngModel)]="numberInput"
-          value="{{numberInput}}"
+          [(ngModel)]="resourceCode"
         />
       </td>
     </tr>
-    <tr>
+    <tr *ngIf="status">
       <button
         type="button"
         class="enterNDiscard"
-        ((click)="addForm(resourceName, resourceCode)"
+        (click)="addForm()"
       >
         Enter
       </button>
       <button
         type="button"
         class="enterNDiscard"
-        ((click)="addForm(resourceName, resourceCode)"
+        (click)="onDiscard()"
       >
         Discard
       </button>
     </tr>
   </table>
 
-  <!--
-    <form #addForm="ngForm">
-              <td> <input name="resName" [(ngModel)]="resName" value="{{resName}}" type="text" placeholder="Resource name"> </td>
-              <td> <input name="resCode" [(ngModel)]="resCode" value="{{resCode}}" type="text" placeholder="Resource name"> </td>
-              <button (click)="addFormFunc(addForm)"> Add </button>
-        </form>
-    </div>
-  -->
+  <div  (click)="onChange($event.target.value)"class="pagination">
+    <a>&laquo;</a>
+    <option  value="1">1</option>
+    <option  value="2">2</option>
+    <option  value="3">3</option>
+    <option  value="4">4</option>
+    <option  value="5">5</option>
+    <option  value="6">6</option>
+    <a>&raquo;</a>
+  </div>
+
+  <select (change)="onSelectChange($event.target.value)">
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="15">15</option>
+    <option value="20">20</option>
+  </select>
+
+  <div> There is {{ dataLength}} data in the database </div>
+
   <ng-template #emptyDb>
     <h1>
       Your Database is currently empty or your not properly connnected to it.

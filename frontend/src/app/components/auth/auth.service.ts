@@ -12,10 +12,12 @@ export class AuthService {
   private isAuth = false;
   private timer:any;
 
+  name:string;
+  lastname:string;
+
   constructor(private http: HttpClient, private router: Router) { }
 
   //  ##### these methods are invoked from the other COMPONENTS #####
-
 
   // returns a boolean if logged in "TRUE" if not "FALSE"
   getIsAuth(){
@@ -23,8 +25,8 @@ export class AuthService {
   }
 
   // signup
-  createUser(email: string, password:string){
-    const authData: AuthData = { email, password};
+  createUser(email, password, name, lastname){
+    const authData: AuthData = { email, password, name , lastname};
     this.http.post("http://localhost:3000/signup", authData)
       .subscribe(res => {
         console.log(res);
@@ -35,13 +37,20 @@ export class AuthService {
 
   // login
   signin(email:string, password: string){
-    const authData: AuthData = { email, password};
-    // console.log(authData.email)
+    const authData = { email, password};
     this.http
-        .post<{token: string; expiresIn:number}>("http://localhost:3000/login", authData)
+        .post<{name:string; lastname:string; token: string; expiresIn:number}>("http://localhost:3000/login", authData)
         .subscribe(res => {
+          console.log(res);
+
           const token = res.token;
+          const name = res.name;
+          const lastname = res.lastname;
+
           this.token = token;
+          this.name = res.name;
+          this.lastname = res.lastname;
+
           if(token) {
             const expiresIn = res.expiresIn;
             this.setAuthTimer(expiresIn); // auth timer
@@ -54,7 +63,6 @@ export class AuthService {
 
             //navigate
             this.router.navigate(["/resource"])
-
           }
         })
   }
@@ -85,5 +93,10 @@ export class AuthService {
   clearLocalstorage(){
     localStorage.removeItem("token");
     localStorage.removeItem("expiration");
+  }
+
+  // send name 
+  sendName(){
+    this.name, this.lastname
   }
 }
