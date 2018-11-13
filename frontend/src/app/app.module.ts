@@ -12,10 +12,7 @@ import { ResourcesTableComponent } from './components/resources-table/resources-
 import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
-<<<<<<< HEAD:frontend/src/app/app.module.ts
-=======
 import { FormulaTableComponent } from './components/formula-table/formula-table.component';
->>>>>>> ElvisA:frontend/src/app/app.module.ts
 
 import { AccordionModule } from 'primeng/accordion';
 import { MenuItem } from 'primeng/api';
@@ -38,13 +35,9 @@ import { FilterPipe } from './components/resources-table/filter.pipe';
     ResourcesTableComponent,
     HeaderComponent,
     NavbarComponent,
-<<<<<<< HEAD:frontend/src/app/app.module.ts
-    SearchBarComponent
-=======
     SearchBarComponent,
     FormulaTableComponent,
     FilterPipe,
->>>>>>> ElvisA:frontend/src/app/app.module.ts
   ],
   imports: [
     BrowserModule,

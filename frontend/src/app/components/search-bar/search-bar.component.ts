@@ -7,6 +7,8 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
+  @Output() notify:EventEmitter<boolean> = new EventEmitter<boolean>();
+
   show: boolean = false;
 
   data: string;
@@ -19,6 +21,10 @@ export class SearchBarComponent implements OnInit {
   }
 
   constructor() {}
+
+  onClick():void{
+    this.notify.emit();
+  }
 
   ngOnInit() {}
 }
