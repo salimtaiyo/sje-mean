@@ -16,15 +16,14 @@ export class AuthService {
 
   //  ##### these methods are invoked from the other COMPONENTS #####
 
-
   // returns a boolean if logged in "TRUE" if not "FALSE"
   getIsAuth(){
     return this.isAuth;
   }
 
   // signup
-  createUser(email: string, password:string){
-    const authData: AuthData = { email, password};
+  createUser(email, password, name, lastname){
+    const authData: AuthData = { email, password, name , lastname};
     this.http.post("http://localhost:3000/signup", authData)
       .subscribe(res => {
         console.log(res);
@@ -35,7 +34,7 @@ export class AuthService {
 
   // login
   signin(email:string, password: string){
-    const authData: AuthData = { email, password};
+    const authData = { email, password};
     // console.log(authData.email)
     this.http
         .post<{token: string; expiresIn:number}>("http://localhost:3000/login", authData)

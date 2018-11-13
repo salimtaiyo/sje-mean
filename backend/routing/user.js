@@ -12,13 +12,15 @@ router.post("/signup", (req,res) => {
         .then(hash => {
             const user = new User({
                 email: req.body.email,
-                password: hash
+                password: hash,
+                name: req.body.name,
+                lastname: req.body.lastname
             });
 
             user.save()
                 .then(result => {
                     res.json({
-                            message: "the has been created",
+                            message: "the user has been created",
                             result: result
                     });
                 })
