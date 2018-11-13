@@ -2,11 +2,11 @@
   <i class="fas fa-angle-right fa-1x"> </i>
 </div>
 
-<div *ngIf="show">
-  <div (click)="show = !show" class="arrowIconClose">
+<div>
+  <div (click)="show = !show" [ngClass]="{ arrowIconClose: show }">
     <i class="fas fa-angle-left fa-1x"> </i>
   </div>
-  <div class="sidenav">
+  <div [ngClass]="{ sidenav: show, sidenavDp: !show }">
     <a routerLink="/project">Project</a> <a routerLink="/resource">Resource</a>
     <a routerLink="/formula">Formula</a>
   </div>

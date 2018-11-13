@@ -17,15 +17,20 @@ import { FormulaTableComponent } from './components/formula-table/formula-table.
 import { AccordionModule } from 'primeng/accordion';
 import { MenuItem } from 'primeng/api';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from '@angular/material';
-import { MatMenuModule, MatButtonModule, MatIconModule, MatCardModule, MatSidenavModule } from '@angular/material';
+import {
+  MatMenuModule,
+  MatButtonModule,
+  MatIconModule,
+  MatCardModule,
+  MatSidenavModule
+} from '@angular/material';
 import { MatCheckboxModule } from '@angular/material';
+import { ProjectTableComponent } from './components/project-table/project-table.component';
+import { Project2TableComponent } from './components/project2-table/project2-table.component';
 import { FilterPipe } from './components/resources-table/filter.pipe';
-
-
-
 
 @NgModule({
   declarations: [
@@ -36,8 +41,10 @@ import { FilterPipe } from './components/resources-table/filter.pipe';
     HeaderComponent,
     NavbarComponent,
     SearchBarComponent,
+    ProjectTableComponent,
+    Project2TableComponent,
     FormulaTableComponent,
-    FilterPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -60,4 +67,4 @@ import { FilterPipe } from './components/resources-table/filter.pipe';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

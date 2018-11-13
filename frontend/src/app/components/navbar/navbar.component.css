@@ -35,6 +35,7 @@ body {
   background-color: #111;
   overflow-x: hidden;
   padding-top: 31px;
+  transition: 0.5s;
 }
 
 .sidenav a {
@@ -56,4 +57,33 @@ body {
   margin-left: 160px; /* Same as the width of the sidenav */
   font-size: 28px; /* Increased text to enable scrolling */
   padding: 0px 10px;
+}
+
+/* ================= */
+/* ================= */
+.sidenavDp {
+  height: 100%;
+  width: 0;
+  position: absolute;
+  z-index: 1;
+  top: 89px;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 31px;
+  transition: 0.5s;
+}
+
+.sidenavDp a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: none;
+  transition: 0.3s;
+}
+/* ================= */
+/* ================= */
+.fa-angle-left {
+  color: white;
 }
