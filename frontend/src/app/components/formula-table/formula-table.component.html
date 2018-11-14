@@ -1,11 +1,64 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
 <app-header></app-header>
 <app-navbar></app-navbar>
 
 
-<input [(ngModel)]="searchText" placeholder="search text goes here">
+<div class="wrapper">  
 
-<ul>
-  <li *ngFor="let c of characters | filter : searchText">
-    {{c}}
-  </li>
-</ul>
+  <div class = "tableTitle">
+    <h3 style = "color: white; margin: .5em .3em;">QUANTITY SURVEY</h3>
+  </div>
+
+  <table>
+    <tr>
+      <th>Resource Name</th>
+      <th>Resource Code</th>
+    </tr>    
+    <tr *ngFor="let data of dataProject" >
+      <td  >
+        <input (click)="transferPick($event.target.value)" type="checkbox" name="checked" value="{{data.resource}},{{data.code}}"/>
+        {{data.resource}}
+        <br>
+      </td>
+      <td> {{ data.code }}</td>
+    </tr>    
+  </table>
+
+  <div  (click)="onChange($event.target.value)"class="pagination">
+    <a>&laquo;</a>
+    <option  value="1">1</option>
+    <option  value="2">2</option>
+    <option  value="3">3</option>
+    <option  value="4">4</option>
+    <option  value="5">5</option>
+    <option  value="6">6</option>
+    <a>&raquo;</a>
+  </div>
+
+  <select (change)="onSelectChange($event.target.value)">
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="15">15</option>
+    <option value="20">20</option>
+  </select>
+
+  <div> There is {{ dataLength}} data in the database </div>
+
+  <ng-template #emptyDb>
+    <h1>
+      Your Database is currently empty or your not properly connnected to it.
+    </h1>
+  </ng-template>
+
+  <div style = " width: 90%; margin: 25px auto;">
+    <a href = "#" style = "font-weight: bold;">
+      Edit Quantity Survey Template
+    </a>
+
+    <button type = "submit">
+      <i class="fas fa-check"></i> Submit
+    </button>
+  </div>
+
+</div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FilterPipe } from '../resources-table/filter.pipe';
+import { MydataService } from 'src/app/service/mydata.service';
 
 @Component({
   selector: 'app-formula-table',
@@ -8,11 +8,16 @@ import { FilterPipe } from '../resources-table/filter.pipe';
 })
 export class FormulaTableComponent implements OnInit {
 
-  name = 'Angular';
+  private dataProject; // data thats fetched from the DB
+  dataArray=[]; // saves the value 
 
-  constructor() { }
+  constructor(private dataService:MydataService) {}
 
   ngOnInit() {
+    this.dataService.dataUser().subscribe(data => {
+      this.dataProject = data['data'];
+      console.log(this.dataProject)
+    });
   }
 
 }
