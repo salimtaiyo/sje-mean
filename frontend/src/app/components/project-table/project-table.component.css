@@ -48,23 +48,42 @@ th {
 
 h3 {
   text-align: center;
-  padding: -2px;
+
+  position: relative;
+  top: 11px;
+  right: 0;
+  left: 0;
 }
 .topnav {
   padding-bottom: -2px;
+
+  margin-top: 5%;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  margin-left: 0%;
+  width: 70%;
+  height: 70px;
 }
 
 input[type='checkbox'] {
   margin: 10px;
 }
 .fa-list-ul:before {
-  margin-left: 516%;
+  margin-left: 2480%;
   color: #ffa500;
+  position: relative;
+  top: -44px;
+  left: -43px;
+  right: 0;
 }
 
 .fa-file-export:before {
-  margin-left: 555%;
+  margin-left: 1955%;
   color: #ffa500;
+  position: relative;
+  top: -26px;
+  left: 43px;
+  right: 0;
 }
 .fa-list-ul:hover,
 .fa-file-export:hover {
@@ -109,7 +128,9 @@ table:hover {
 }
 .dropdown-content {
   float: none;
-  margin-left: 80%;
+  margin-left: 26%;
+  position: absolute;
+  top: 40%;
 }
 .columIcon {
   margin-right: 20px;
