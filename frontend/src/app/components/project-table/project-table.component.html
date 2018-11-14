@@ -37,7 +37,7 @@
           (click)="transferPick($event.target.value)"
           type="checkbox"
           name="checked"
-          value="{{data.resource}},{{data.code}}"
+          value="{{data.resource}},{{data.code}}, {{data._id}}"
         />
         {{ data.resource }} <br />
       </td>
@@ -52,3 +52,6 @@
 <div class="container">
   <app-project2-table [datas]="dataArray"></app-project2-table>
 </div>
+
+
+<div *ngFor="let user of dataProject"> {{user._id}}</div>
