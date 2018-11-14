@@ -15,50 +15,16 @@
       <th>Resource Name</th>
       <th>Resource Code</th>
     </tr>    
-    <tr *ngFor="let data of dataProject" >
+    <tr *ngFor="let data of dataProject; let i = index">
       <td  >
-        <input (click)="transferPick($event.target.value)" type="checkbox" name="checked" value="{{data.resource}},{{data.code}}"/>
-        {{data.resource}}
+        <input type="checkbox" name="checked" value="{{data.resource}},{{data.code}}"/>
+        {{data[0]}}
         <br>
       </td>
-      <td> {{ data.code }}</td>
+      <td> {{ data[1] }}</td>
     </tr>    
   </table>
 
-  <div  (click)="onChange($event.target.value)"class="pagination">
-    <a>&laquo;</a>
-    <option  value="1">1</option>
-    <option  value="2">2</option>
-    <option  value="3">3</option>
-    <option  value="4">4</option>
-    <option  value="5">5</option>
-    <option  value="6">6</option>
-    <a>&raquo;</a>
-  </div>
-
-  <select (change)="onSelectChange($event.target.value)">
-    <option value="5">5</option>
-    <option value="10">10</option>
-    <option value="15">15</option>
-    <option value="20">20</option>
-  </select>
-
-  <div> There is {{ dataLength}} data in the database </div>
-
-  <ng-template #emptyDb>
-    <h1>
-      Your Database is currently empty or your not properly connnected to it.
-    </h1>
-  </ng-template>
-
-  <div style = " width: 90%; margin: 25px auto;">
-    <a href = "#" style = "font-weight: bold;">
-      Edit Quantity Survey Template
-    </a>
-
-    <button type = "submit">
-      <i class="fas fa-check"></i> Submit
-    </button>
-  </div>
-
 </div>
+
+{{ dataProject }}

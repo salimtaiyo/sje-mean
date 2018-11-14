@@ -31,6 +31,7 @@ import { MatCheckboxModule } from '@angular/material';
 import { ProjectTableComponent } from './components/project-table/project-table.component';
 import { Project2TableComponent } from './components/project2-table/project2-table.component';
 import { FilterPipe } from './components/resources-table/filter.pipe';
+import { TemplateComponent } from './components/template/template.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { FilterPipe } from './components/resources-table/filter.pipe';
     ProjectTableComponent,
     Project2TableComponent,
     FormulaTableComponent,
-    FilterPipe
+    FilterPipe,
+    TemplateComponent
   ],
   imports: [
     BrowserModule,

@@ -6,25 +6,15 @@ import { SignupComponent } from './components/auth/signup/signup.component';
 import { FormulaTableComponent } from './components/formula-table/formula-table.component';
 import { AuthGuard } from './components/auth/auth.guard';
 import { ProjectTableComponent } from './components/project-table/project-table.component';
+import { TemplateComponent } from './components/template/template.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  {
-    path: 'resource',
-    component: ResourcesTableComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'formula',
-    component: FormulaTableComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'project',
-    component: ProjectTableComponent,
-    canActivate: [AuthGuard]
-  }
+  { path: 'resource', component: ResourcesTableComponent, canActivate: [AuthGuard] },
+  { path: 'formula', component: FormulaTableComponent, canActivate: [AuthGuard] },
+  { path: 'project', component: ProjectTableComponent, canActivate: [AuthGuard] },
+  { path:'template', component:TemplateComponent, canActivate:[AuthGuard]}
 ];
 
 @NgModule({

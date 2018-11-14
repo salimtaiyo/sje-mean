@@ -10,6 +10,7 @@ export class ProjectTableComponent implements OnInit {
   private dataProject; // data thats fetched from the DB
   dataArray; // saves the value 
   dataStorage =[];
+  test = true;
 
   constructor(private dataService:MydataService) {}
   ngOnInit() {
@@ -22,6 +23,8 @@ export class ProjectTableComponent implements OnInit {
   transferPick(dataToTransfer){
     let arr = dataToTransfer.split(',');
     this.dataStorage.push(arr)
+    console.log(this.dataStorage);
+    
   }
 
   transferToChild(){

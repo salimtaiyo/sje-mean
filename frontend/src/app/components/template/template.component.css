@@ -1,0 +1,34 @@
+.container{
+    /* display: flex; */
+    width: 80vw;
+    /* height: 30rem; */
+    border: 1px solid rgb(46, 45, 45);
+    margin: 0 auto;
+}
+
+.child{
+    display: flex;
+    /* border: 1px solid rgb(46, 45, 45); */
+    /* width: 60vw; */
+}
+
+.childTwo{
+    height: 5rem;
+    border-top: 1px solid rgb(46, 45, 45); 
+}
+
+.child__scope{
+    background-color: yellow;
+    width: 40%;
+    padding: 1rem;
+}
+
+.child__scope th{
+    background-color: rgb(189, 186, 186);
+    width: 100%;
+}
+
+.child__survey{
+    background-color: green;
+    width: 60%;
+}

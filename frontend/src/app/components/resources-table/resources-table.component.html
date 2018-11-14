@@ -74,11 +74,12 @@
     <option value="20">20</option>
   </select>
 
-  <div> There is {{ dataLength}} data in the database </div>
-
   <ng-template #emptyDb>
     <h1>
       Your Database is currently empty or your not properly connnected to it.
     </h1>
   </ng-template>
 </div>
+
+
+<div *ngFor="let user of users"> {{user._id}}</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MydataService } from 'src/app/service/mydata.service';
+import { TransferDataService } from 'src/app/service/transfer-data.service';
 
 @Component({
   selector: 'app-formula-table',
@@ -8,16 +9,19 @@ import { MydataService } from 'src/app/service/mydata.service';
 })
 export class FormulaTableComponent implements OnInit {
 
-  private dataProject; // data thats fetched from the DB
+  private dataProject;// data thats fetched from the DB
   dataArray=[]; // saves the value 
 
-  constructor(private dataService:MydataService) {}
+  message:string;
+
+  constructor(private dataService:MydataService, private transferService:TransferDataService) {}
 
   ngOnInit() {
-    this.dataService.dataUser().subscribe(data => {
-      this.dataProject = data['data'];
-      console.log(this.dataProject)
-    });
+    this.transferService.currentMessage.subscribe(
+      message => this.dataProject = message
+      // message => console.log(typeof message)
+    )
+    console.log(this.dataProject)
   }
 
 }
