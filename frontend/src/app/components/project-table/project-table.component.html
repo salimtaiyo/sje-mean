@@ -13,7 +13,7 @@
     <h3>
       Resource Catalog
       <span class="exportx"><i class="fas fa-list-ul orange"></i></span>
-      <span class="list"><i class="fas fa-file-export orange "> </i></span>
+      <span class="list"><i class="fas fa-file-export orange " (click)="transferToChild()"> </i></span>
     </h3>
   </div>
   <table>
@@ -30,7 +30,8 @@
       </td>
       <td> {{ data.code }}</td>
     </tr>
-    
   </table>
 </div>
-<div class="container"><app-project2-table></app-project2-table></div>
+
+<!-- the child component is attached with an [datas] for @Input communication -->
+<div class="container"><app-project2-table [datas]="dataArray"></app-project2-table></div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MydataService } from 'src/app/service/mydata.service';
 
 @Component({
@@ -8,10 +8,10 @@ import { MydataService } from 'src/app/service/mydata.service';
 })
 export class ProjectTableComponent implements OnInit {
   private dataProject; // data thats fetched from the DB
-  dataArray=[]; // saves the value 
+  dataArray; // saves the value 
+  dataStorage =[];
 
   constructor(private dataService:MydataService) {}
-
   ngOnInit() {
     this.dataService.dataUser().subscribe(data => {
       this.dataProject = data['data'];
@@ -21,8 +21,10 @@ export class ProjectTableComponent implements OnInit {
 
   transferPick(dataToTransfer){
     let arr = dataToTransfer.split(',');
-    this.dataArray.push(arr)
-    console.log(this.dataArray);
-    
+    this.dataStorage.push(arr)
+  }
+
+  transferToChild(){
+    return this.dataArray= this.dataStorage.slice();
   }
 }

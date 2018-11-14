@@ -7,7 +7,7 @@
 
 <div class="wrapper">
   <div class="topnav">
-    <h3>Project <i class="far fa-trash-alt"></i></h3>
+    <h3>Project <i class="far fa-trash-alt" (click)="deleteRow()"></i></h3>
   </div>
   <table>
     <tr>
@@ -15,41 +15,14 @@
       <th>PROJECT CODE</th>
     </tr>
 
-    <tr>
-      <td>
-        <input type="checkbox" value="a" name="checked" checked />Alfreds
-        Futterkiste
+    <!-- loops through the ARRAY received from the PARENT component -->
+    <tr *ngFor="let data of datas; let i = index">
+      <td value="i" >
+        <input (click)="deleteRowIndex(i)" type="checkbox" name="checked" value="{{data[0]}}"/> {{data[0]}}
       </td>
-      <td>0200001</td>
-    </tr>
-    <tr>
-      <td>
-        <input type="checkbox" value="a" name="checked" />Centro comercial
-        Moctezuma
-      </td>
-      <td>0400001</td>
-    </tr>
-    <tr>
-      <td><input type="checkbox" value="a" name="checked" />Ernst Handel</td>
-      <td>0200031</td>
-    </tr>
-    <tr>
-      <td><input type="checkbox" value="a" name="checked" />Island Trading</td>
-      <td>0330001</td>
-    </tr>
-    <tr>
-      <td>
-        <input type="checkbox" value="a" name="checked" />Laughing Bacchus
-        Winecellars
-      </td>
-      <td>0666601</td>
-    </tr>
-    <tr>
-      <td>
-        <input type="checkbox" value="a" name="checked" />Magazzini Alimentari
-        Riuniti
-      </td>
-      <td>0330001</td>
+      <td attr.data-value={{data[1]}} >{{ data[1] }}</td>
     </tr>
   </table>
+
+  <!-- {{ datas | json }} -->
 </div>
