@@ -28,6 +28,7 @@ export class Project2TableComponent implements OnInit {
   saveArray(data){
     let dataArray = data.toString().split(',')
     this.savedArr.push(dataArray)
+    console.log('l;llikh' +this.savedArr)
   }
 
   deleteRow(){
