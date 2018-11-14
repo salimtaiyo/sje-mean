@@ -48,8 +48,8 @@ export class AuthService {
           const lastname = res.lastname;
 
           this.token = token;
-          this.name = res.name;
-          this.lastname = res.lastname;
+          this.name = name;
+          this.lastname = lastname;
 
           if(token) {
             const expiresIn = res.expiresIn;

@@ -76,7 +76,7 @@ export class ResourcesTableComponent implements OnInit, OnChanges {
   onDiscard(){
     this.resourceName = "";
     this.resourceCode = null;
-    this.status = !this.status;
+    this.status = !this.status; 
   }
 
   // pagination value getter

@@ -73,7 +73,7 @@ router.post("/login", (req,res) => {
 })
 
 // get information
-router.get('/info', (req,res) =>{
+router.get('/.info.js', (req,res) =>{
     User.find({})
         .then(data => {
             res.json({
