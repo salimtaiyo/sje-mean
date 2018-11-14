@@ -16,13 +16,13 @@ th {
 .wrapper {
   width: 90%;
   margin: 5% auto;
-} 
+}
 
 * {
   box-sizing: border-box;
 }
 
-table {  
+table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
@@ -32,12 +32,10 @@ button {
   background-color: orange;
   color: white;
   border: none;
-  display: inline-block;
   padding: 8px 10px;
   text-align: center;
   cursor: pointer;
   font-weight: bold;
-
   float: right;
 
 }

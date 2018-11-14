@@ -6,7 +6,9 @@ import { TransferDataService } from 'src/app/service/transfer-data.service';
   templateUrl: './project2-table.component.html',
   styleUrls: ['./project2-table.component.css']
 })
+
 export class Project2TableComponent implements OnInit {
+
   @Input() datas;
   indexArr:Array<number> = [];
   savedArr:Array<any> = [];
@@ -20,7 +22,7 @@ export class Project2TableComponent implements OnInit {
     )
   }
 
-  deleteRowIndex(index){
+  deleteRowIndex(index) {
     this.indexArr.push(index);
     // console.log(index);
   }
@@ -30,16 +32,16 @@ export class Project2TableComponent implements OnInit {
     this.savedArr.push(dataArray)
   }
 
-  deleteRow(){
-    for(let i =0; i<this.indexArr.length; i++){
+  deleteRow() {
+    for (let i = 0; i < this.indexArr.length; i++) {
       console.log(this.indexArr[i]);
-      this.datas.splice(this.indexArr[i],1)
+      this.datas.splice(this.indexArr[i], 1);
     }
   }
 
   // emmitter
   newMessage(){
-    
+
     this.transferService.changeMessage(this.savedArr);
   }
 }
