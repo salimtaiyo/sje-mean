@@ -13,7 +13,6 @@ const dataRouter = require('./routing/data');
 app.use(express.json());
 app.use(cors());
 
-
 // database 
 mongoose
   .connect(

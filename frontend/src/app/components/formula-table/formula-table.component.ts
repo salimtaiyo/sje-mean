@@ -7,12 +7,11 @@ import { TransferDataService } from 'src/app/service/transfer-data.service';
   templateUrl: './formula-table.component.html',
   styleUrls: ['./formula-table.component.css']
 })
+
 export class FormulaTableComponent implements OnInit {
 
   private dataProject;// data thats fetched from the DB
-  dataArray=[]; // saves the value 
-
-  message:string;
+  dataArray=[]; // saves the value
 
   constructor(private dataService:MydataService, private transferService:TransferDataService) {}
 
@@ -21,7 +20,21 @@ export class FormulaTableComponent implements OnInit {
       message => this.dataProject = message
       // message => console.log(typeof message)
     )
-    console.log(this.dataProject)
+    console.log(this.dataProject);
+
+  }
+
+  // inline editing valuable
+
+  showEditTable: boolean = false;
+  editRowID: number;
+
+  checkEditRow(val) {
+    this.editRowID = val;
+  }
+
+  submitUpdate() {
+
   }
 
 }

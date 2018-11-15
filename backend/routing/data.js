@@ -49,5 +49,21 @@ router.post("/data", (req,res) => {
 });
 
 
-
+// updating 
+router.put('/data/:id', (req,res) => {
+    Data.findByIdAndUpdate({_id: req.params.id}, {
+        $set:{
+            resource: req.body.resource,
+            code : req.body.code
+        }
+    },
+    function(err,result){
+        if(err){
+            res.json(err)
+        }
+        else{
+            res.json({result})
+        }
+    })
+})
 module.exports= router;
