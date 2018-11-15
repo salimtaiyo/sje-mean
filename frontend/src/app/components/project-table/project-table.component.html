@@ -12,7 +12,7 @@
   <div class="topnav">
     <h3>Resource Catalog</h3>
     <span class="exportx"
-      ><i (click)="transferToChild()" class="fas fa-file-export  orange"></i
+      ><i class="fas fa-file-export  orange" (click)="transferToChild()"></i
     ></span>
     <div class="iconx">
       <div class="dropdown" (click)="show = !show">
@@ -41,8 +41,11 @@
           (ngModelChange)="modelChanged($event)"
           type="checkbox"
           name="checked"
-          value="{{data.resource}},{{data.code}}"
+          value="{{ data.resource }},{{ data.code }}"
           [attr.checked]="checkAll ? 'checked' : null"
+          value="{{
+          data.resource
+        }},{{ data.code }}, {{ data._id }}"
         />
 
         {{ data.resource }} <br />
@@ -58,3 +61,5 @@
 <div class="container">
   <app-project2-table [datas]="dataArray"></app-project2-table>
 </div>
+
+<div *ngFor="let user of dataProject">{{ user._id }}</div>

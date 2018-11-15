@@ -16,6 +16,7 @@ export class MydataService {
     // const paginationQuery = `?pagesize=${pagesize}&page=${page}`;
     return this.http.get('http://localhost:3000/data');
   }
+
   postUser(resourceName:string, resourceCode: Number){
     const newData = {resourceName, resourceCode};
     this.http.post('http://localhost:3000/data', newData)

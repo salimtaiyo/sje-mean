@@ -1,8 +1,5 @@
 import { Component, OnInit,DoCheck, OnChanges } from '@angular/core';
 import { MydataService } from '../../service/mydata.service';
-import { Subscriber } from 'rxjs';
-import { NgForm } from '@angular/forms';
-import { FilterPipe } from './filter.pipe';
 
 @Component({
   selector: 'app-resources-table',
@@ -11,23 +8,17 @@ import { FilterPipe } from './filter.pipe';
 })
 export class ResourcesTableComponent implements OnInit, OnChanges {
   users: Object;
-  dataLength: number;
   resourceName: string;
   resourceCode: Number;
   // pagination
   pagesize:number = 0;
-
   page:number = 20;
 
-
   typing: string = '';
-
   searchText: string;
 
   getData(typing) {
-
     this.typing = typing;
-
     this.searchText = typing;
   }
 
@@ -35,15 +26,13 @@ export class ResourcesTableComponent implements OnInit, OnChanges {
   public status:Boolean = false; // invoked from the child component (Update) toggles update child
 
   constructor(private data: MydataService) {}
-
   ngOnInit() {
     this.data.getUser(this.pagesize,this.page).subscribe(data => {
       this.users = data['data'];
       console.log(this.users)
-      this.dataLength = data['data'].length;
+
     });
   }
-
 
   // adds data to the database
   addForm(){
@@ -60,12 +49,7 @@ export class ResourcesTableComponent implements OnInit, OnChanges {
     this.data.getUser(this.pagesize,this.page).subscribe(data => {
       this.users = data['data'];
     });
-    // changes.prop contains the old and the new value...
 }
-
-  // ngDoCheck(){
-  //   this.addForm();
-  // }
 
   // invoked from the  child component
   onNotifyClicked(message:Boolean):void{
@@ -76,7 +60,7 @@ export class ResourcesTableComponent implements OnInit, OnChanges {
   onDiscard(){
     this.resourceName = "";
     this.resourceCode = null;
-    this.status = !this.status; 
+    this.status = !this.status;
   }
 
   // pagination value getter
@@ -87,6 +71,7 @@ export class ResourcesTableComponent implements OnInit, OnChanges {
     });
   }
 
+  // pagination request 
   onSelectChange(pageLimit){
     this.page = pageLimit;
     this.data.getUser(this.pagesize,this.page).subscribe(data => {

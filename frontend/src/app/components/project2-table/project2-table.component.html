@@ -18,11 +18,17 @@
     <!-- loops through the ARRAY received from the PARENT component -->
     <tr *ngFor="let data of datas; let i = index">
       <td value="i" >
-        <input (click)="deleteRowIndex(i)" type="checkbox" name="checked" value="{{data[0]}}"/> {{data[0]}}
+        <input (click)="deleteRowIndex(i); saveArray(data)"  type="checkbox" name="checked" value="{{data[0]}}"/> {{data[0]}}
       </td>
       <td attr.data-value={{data[1]}} >{{ data[1] }}</td>
     </tr>
   </table>
 
+  <p> {{message}}</p>
+
   <!-- {{ datas | json }} -->
 </div>
+
+<button (click)="newMessage()"> CLICK SEND WOAW</button>
+
+<div *ngFor="let data of datas"> {{ data[2]}}</div>
