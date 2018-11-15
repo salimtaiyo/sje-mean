@@ -27,8 +27,18 @@ export class ProjectTableComponent implements OnInit {
   }
 
   transferPick(dataToTransfer) {
-    let arr = dataToTransfer.split(',');
-    this.dataStorage.push(arr);
+    console.log(dataToTransfer);
+    debugger;
+    let arr = dataToTransfer.target.value.split(',');
+    if (dataToTransfer.target.checked) {
+      // console.log
+
+      this.dataStorage.push(arr);
+    } else {
+      // remove from the array
+    }
+    // let arr = dataToTransfer.split(',');
+    // this.dataStorage.push(arr);
   }
 
   transferToChild() {
@@ -37,5 +47,10 @@ export class ProjectTableComponent implements OnInit {
   modelChanged(newObj) {
     console.log('=================');
     console.log(newObj);
+  }
+
+  checkallrecords() {
+    this.dataStorage = this.dataProject;
+    console.log(this.dataStorage);
   }
 }

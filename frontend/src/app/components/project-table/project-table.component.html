@@ -18,7 +18,7 @@
       <div class="dropdown" (click)="show = !show">
         <span class="list"><i class="fas fa-list-ul orange "> </i></span>
         <div class="dropdown-content" *ngIf="show">
-          <a (click)="checkAll = true"
+          <a (click)="checkallrecords()"
             ><input type="checkbox" value="a" name="checked" />Select All</a
           >
           <a (click)="checkAll = false"
@@ -38,11 +38,10 @@
     <tr *ngFor="let data of dataProject">
       <td>
         <input
+          (click)="transferPick($event.tar)"
           (ngModelChange)="modelChanged($event)"
           type="checkbox"
           name="checked"
-          value="{{ data.resource }},{{ data.code }}"
-          [attr.checked]="checkAll ? 'checked' : null"
           value="{{
           data.resource
         }},{{ data.code }}, {{ data._id }}"
