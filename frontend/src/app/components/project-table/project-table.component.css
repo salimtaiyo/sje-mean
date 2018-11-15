@@ -92,6 +92,8 @@ input[type='checkbox'] {
 .container {
   display: inline-block;
   width: 45%;
+  position: relative;
+  top: 69px;
 }
 .topnav:hover,
 table:hover {
