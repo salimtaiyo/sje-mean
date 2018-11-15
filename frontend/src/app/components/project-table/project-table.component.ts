@@ -1,4 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  OnChanges,
+  SimpleChanges
+} from '@angular/core';
 import { MydataService } from 'src/app/service/mydata.service';
 
 @Component({
@@ -8,23 +14,28 @@ import { MydataService } from 'src/app/service/mydata.service';
 })
 export class ProjectTableComponent implements OnInit {
   private dataProject; // data thats fetched from the DB
-  dataArray; // saves the value 
-  dataStorage =[];
+  dataArray; // saves the value
+  dataStorage = [];
+  checkAll: Boolean = false;
 
-  constructor(private dataService:MydataService) {}
+  constructor(private dataService: MydataService) {}
   ngOnInit() {
     this.dataService.dataUser().subscribe(data => {
       this.dataProject = data['data'];
-      console.log(this.dataProject)
+      console.log(this.dataProject);
     });
   }
 
-  transferPick(dataToTransfer){
+  transferPick(dataToTransfer) {
     let arr = dataToTransfer.split(',');
-    this.dataStorage.push(arr)
+    this.dataStorage.push(arr);
   }
 
-  transferToChild(){
-    return this.dataArray= this.dataStorage.slice();
+  transferToChild() {
+    return (this.dataArray = this.dataStorage.slice());
+  }
+  modelChanged(newObj) {
+    console.log('=================');
+    console.log(newObj);
   }
 }
