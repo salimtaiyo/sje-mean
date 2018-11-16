@@ -13,6 +13,8 @@ export class Project2TableComponent implements OnInit {
   indexArr:Array<number> = [];
   savedArr:Array<any> = [];
   message;
+  mappedData;
+  
 
   constructor( private transferService:TransferDataService ) { }
 
@@ -20,29 +22,29 @@ export class Project2TableComponent implements OnInit {
     this.transferService.currentMessage.subscribe(
       message => this.message = message
     )
+    
   }
 
-  deleteRowIndex(index) {
-    this.indexArr.push(index);
-    // console.log(index);
-  }
+  deleteRowIndex(id) { this.indexArr.push(id);}
 
   saveArray(data){
-    let dataArray = data.toString().split(',')
-    this.savedArr.push(dataArray)
-    console.log('l;llikh' +this.savedArr)
+    // let dataArray = data.toString().split(',')
+    this.savedArr.push(data)
+    console.log(this.savedArr);
+    
   }
 
   deleteRow() {
     for (let i = 0; i < this.indexArr.length; i++) {
-      console.log(this.indexArr[i]);
-      this.datas.splice(this.indexArr[i], 1);
+      let index = this.datas.findIndex(item => item._id === this.indexArr[i]);
+      this.datas.splice(index,1);
+      index = null;
     }
+    this.indexArr.length =0;
   }
-
+ 
   // emmitter
   newMessage(){
-
     this.transferService.changeMessage(this.savedArr);
   }
 }

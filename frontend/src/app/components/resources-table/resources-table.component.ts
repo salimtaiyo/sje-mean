@@ -29,8 +29,6 @@ export class ResourcesTableComponent implements OnInit, OnChanges {
   ngOnInit() {
     this.data.getUser(this.pagesize,this.page).subscribe(data => {
       this.users = data['data'];
-      console.log(this.users)
-
     });
   }
 

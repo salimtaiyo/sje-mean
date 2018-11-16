@@ -21,7 +21,6 @@ export class FormulaTableComponent implements OnInit {
       // message => console.log(typeof message)
     )
     console.log(this.dataProject);
-
   }
 
   // inline editing valuable

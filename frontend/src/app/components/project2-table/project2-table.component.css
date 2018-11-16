@@ -67,3 +67,20 @@ input[type='checkbox'] {
 table:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+button {
+  background-color: #ff5500e8;
+  text-decoration: none;
+
+  width: 283px;
+  height: 36px;
+  border: none;
+  color: white;
+  padding: 2px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 7px 28px;
+  cursor: pointer;
+  margin-bottom: 5%;
+}

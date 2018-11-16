@@ -50,8 +50,8 @@ router.post("/data", (req,res) => {
 
 
 // updating 
-router.put('/data/:id', (req,res) => {
-    Data.findByIdAndUpdate({_id: req.params.id}, {
+router.patch('/data/:id', (req,res) => {
+    Data.findOneAndUpdate({_id: req.params.id}, {
         $set:{
             resource: req.body.resource,
             code : req.body.code

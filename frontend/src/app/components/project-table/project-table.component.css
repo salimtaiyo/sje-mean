@@ -1,3 +1,37 @@
+
+/* fix */
+.fix{
+  display: flex;
+}
+
+.fix__first{
+  width: 50%;
+}
+
+.fix__second{
+  width: 50%;
+}
+
+/* header of the first table */
+
+.topnav {
+  display: flex;
+  background-color: #584d4d94;
+  width: 70%;
+  margin-top: 5%;
+}
+.topnav__header h3{
+  text-align: center;
+  transform: translateX(110%);
+}
+
+.topnav__icons{
+  display: flex;
+  align-items: center;
+  transform: translateX(15rem);
+}
+
+
 table {
   margin-top: 0.5%;
   font-family: arial, sans-serif;
@@ -12,126 +46,8 @@ th {
   padding: 8px;
 }
 
-.wrapper {
-  width: 50%;
-  margin-top: 5%;
-  margin-left: 5%;
-  display: inline-block;
-}
-.wrapper2 {
-  width: 40px;
-
-  display: inline-block;
-}
-th {
-  text-align: center;
-  background-color: #dddddd;
-  font-size: 14px;
-}
-/* ------------------------ */
-* {
-  box-sizing: border-box;
+th{
+  background-color:#dddddd;
 }
 
-/* body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-      } */
 
-.topnav {
-  overflow: hidden;
-  background-color: #584d4d94;
-  padding: 2px;
-  display: block;
-  width: 70%;
-}
-
-h3 {
-  text-align: center;
-
-  position: relative;
-  top: 11px;
-  right: 0;
-  left: 0;
-}
-.topnav {
-  padding-bottom: -2px;
-
-  margin-top: 5%;
-  padding-bottom: 0px;
-  padding-top: 0px;
-  margin-left: 0%;
-  width: 70%;
-  height: 70px;
-}
-
-input[type='checkbox'] {
-  margin: 10px;
-}
-.fa-list-ul:before {
-  margin-left: 2480%;
-  color: #ffa500;
-  position: relative;
-  top: -44px;
-  left: -43px;
-  right: 0;
-}
-
-.fa-file-export:before {
-  margin-left: 1955%;
-  color: #ffa500;
-  position: relative;
-  top: -26px;
-  left: 43px;
-  right: 0;
-}
-.fa-list-ul:hover,
-.fa-file-export:hover {
-  text-shadow: 2px 2px 4px #000000;
-}
-.container {
-  display: inline-block;
-  width: 45%;
-}
-.topnav:hover,
-table:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-/* ================= drop down menu ===================== */
-/* ======================================================= */
-.dropdown-content {
-  display: block;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-  font-size: 14px;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-.dropdown-content {
-  float: none;
-  margin-left: 26%;
-  position: absolute;
-  top: 40%;
-}
-.columIcon {
-  margin-right: 20px;
-}

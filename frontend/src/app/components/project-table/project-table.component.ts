@@ -1,8 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  OnChanges,
+  SimpleChanges
+} from '@angular/core';
 import { MydataService } from 'src/app/service/mydata.service';
-
-
-
 
 @Component({
   selector: 'app-project-table',
@@ -10,29 +13,45 @@ import { MydataService } from 'src/app/service/mydata.service';
   styleUrls: ['./project-table.component.css']
 })
 export class ProjectTableComponent implements OnInit {
-
   private dataProject; // data thats fetched from the DB
-  dataArray; // saves the value
+  dataArray; // the saved array thats being sent to the child component
   dataStorage = [];
-  test = true;
+  checkAll: Boolean = false;
 
-  constructor (private dataService: MydataService) {}
-
+  constructor(private dataService: MydataService) {}
   ngOnInit() {
     this.dataService.dataUser().subscribe(data => {
       this.dataProject = data['data'];
-      console.log(this.dataProject);
     });
   }
 
   transferPick(dataToTransfer) {
-    let arr = dataToTransfer.split(',');
-    this.dataStorage.push(arr)
-    console.log(this.dataStorage);
+    // this.dataProject.length = 0;
+    // let arr = dataToTransfer.target.value;
 
+    // let data = this.dataProject.find(item => item._id === arr);
+    // this.dataStorage.push(data);
+    // console.log(this.dataStorage);
+    
+    if (dataToTransfer.target.checked) {
+      let arr = dataToTransfer.target.value;
+      let data = this.dataProject.find(item => item._id === arr);
+      this.dataStorage.push(data);
+      // this.dataStorage.push(arr);
+    } else {
+      // remove from the array
+      
+    }
+    // let arr = dataToTransfer.split(',');
+    // this.dataStorage.push(arr);
   }
 
   transferToChild() {
-    return this.dataArray = this.dataStorage.slice();
+    this.dataArray = this.dataStorage.slice();
+
+  }
+
+  checkallrecords() {
+    this.dataStorage = this.dataProject;
   }
 }

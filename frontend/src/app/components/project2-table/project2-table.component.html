@@ -7,7 +7,7 @@
 
 <div class="wrapper">
   <div class="topnav">
-    <h3>Project <i class="far fa-trash-alt" (click)="deleteRow()"></i></h3>
+    <h3>Project <i class="far fa-trash-alt" ></i></h3>
   </div>
   <table>
     <tr>
@@ -17,12 +17,22 @@
 
     <!-- loops through the ARRAY received from the PARENT component -->
     <tr *ngFor="let data of datas; let i = index">
-      <td value="i" >
-        <input (click)="deleteRowIndex(i); saveArray(data)"  type="checkbox" name="checked" value="{{data[0]}}"/> {{data[0]}}
-      </td>
-      <td attr.data-value={{data[1]}} >{{ data[1] }}</td>
+          <!-- <span *ngFor="let data of item"> -->
+          <td value="i">
+              <input
+                (click)="deleteRowIndex($event.target.value); saveArray(data)"
+                type="checkbox"
+                name="checked"
+                value="{{data._id}}"
+              />
+              {{ data.resource }}
+            </td>
+            <td attr.data-value="{{data[1]}}">{{ data.code }}</td>
+          <!-- </span> -->
     </tr>
   </table>
 </div>
 
-<button (click)="newMessage()" routerLink="/formula"> CLICK SEND WOAW</button>
+<button (click)="newMessage()" routerLink="/formula" type="button" class="login">Submit</button>
+
+<button (click)="deleteRow()"> Delete </button>

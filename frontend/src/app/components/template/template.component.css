@@ -1,34 +1,102 @@
+tr, td {
+
+    border: 1px solid rgb(161, 157, 157);
+}
+
+td {
+    padding: 1rem 0;
+    padding-left: 3%;
+}
+
+button {
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+}
+
+.rightInput {
+
+    width: 60%;
+
+}
+
+
 .container{
     /* display: flex; */
-    width: 80vw;
+    width: 80%;
     /* height: 30rem; */
     border: 1px solid rgb(46, 45, 45);
     margin: 0 auto;
 }
 
 .child{
-    display: flex;
+     display: flex;
     /* border: 1px solid rgb(46, 45, 45); */
     /* width: 60vw; */
 }
 
-.childTwo{
-    height: 5rem;
-    border-top: 1px solid rgb(46, 45, 45); 
-}
+/* topLeft */
 
 .child__scope{
-    background-color: yellow;
-    width: 40%;
-    padding: 1rem;
+    position: relative;
+    display: inline-block;
+    background-color: white;
+    width: 30%;
+    padding: 0rem .5rem;
 }
 
-.child__scope th{
+
+.tableLeft {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.child__scope tr{
     background-color: rgb(189, 186, 186);
     width: 100%;
 }
 
-.child__survey{
-    background-color: green;
-    width: 60%;
+.child__scope tr:nth-child(even){
+    background-color: white;
+    width: 100%;
 }
+
+
+/* topRight */
+
+.child__survey{
+    position: relative;
+    display: inline-block;
+    background-color: white;
+    width: 70%;
+    border-left: 1px solid black;
+    padding: 0rem 1rem;
+}
+
+.tableRightHeader {
+    width: 90%;
+    background-color: rgb(189, 186, 186);
+    padding: 1rem 1rem;
+    font-weight: bold;
+}
+
+.tableRight {
+
+    width: 100%;
+    border-spacing: 0px 15px;
+
+}
+
+.tableRight tr {
+
+    background-color: rgb(189, 186, 186);
+
+}
+
+
+
+.childTwo{
+    height: 5rem;
+    border-top: 1px solid rgb(46, 45, 45);
+}
+

@@ -24,4 +24,8 @@ export class MydataService {
         console.log(res);
       })
   }
+
+  updateData(data){
+    return this.http.patch('http://localhost:3000/'+data._id, data )
+  }
 }
