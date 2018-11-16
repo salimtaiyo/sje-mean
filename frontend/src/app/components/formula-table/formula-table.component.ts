@@ -37,7 +37,21 @@ export class FormulaTableComponent implements OnInit {
     if(!this.updateCode){
       this.updateCode = data.code;
     }
-    console.log(this.updateResource,this.updateCode);
+
+    if(!this.updateResource){
+      this.updateResource = data.resource;
+    }
+
+    // console.log(this.updateResource,this.updateCode,data._id);
+    const updatedValue = {
+      resource : this.updateResource,
+      code: this.updateCode,
+      _id: data._id
+
+    }
+    console.log(updatedValue);
+    
+    this.dataService.updateData(updatedValue);
   }
 
 }

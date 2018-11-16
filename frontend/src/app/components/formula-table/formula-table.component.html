@@ -23,11 +23,11 @@
     </tr>
     <tr *ngFor="let data of dataProject; let i = index">
 
-      <td *ngIf = "i === editRowID"> <input type = "text" placeholder="{{ data.resource}}" [(ngModel)] = "updateResource" (keyup)="submitUpdate(data)"/> </td>
+      <td *ngIf = "i === editRowID"> <input type = "text" [(ngModel)] = "data.resource" (keydown.enter)="submitUpdate(data)"/> </td>
       <td *ngIf = "i !== editRowID" (click) = "checkEditRow(i)"> {{ data.resource}} <br/></td>
       
 
-      <td *ngIf = "i === editRowID"><input type = "text" placeholder="{{ data.code }}" [(ngModel)]= "updateCode"/> </td>
+      <td *ngIf = "i === editRowID"><input type = "text" placeholder="{{ data.code }}" [(ngModel)]= "data.code" (keydown.enter)="submitUpdate(data)"/> </td>
       <td *ngIf = "i !== editRowID" (click) = "checkEditRow(i)">{{ data.code }}</td>
       
       <td> {{ data._id}}</td>

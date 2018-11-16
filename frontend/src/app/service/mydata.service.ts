@@ -26,6 +26,7 @@ export class MydataService {
   }
 
   updateData(data){
-    return this.http.patch('http://localhost:3000/'+data._id, data )
+    const updateValue = {resource: data.resource, code: data.code}
+    return this.http.patch('http://localhost:3000/'+data._id, updateValue )
   }
 }
