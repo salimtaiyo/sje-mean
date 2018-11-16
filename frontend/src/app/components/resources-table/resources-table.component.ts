@@ -8,14 +8,17 @@ import { MydataService } from '../../service/mydata.service';
 })
 export class ResourcesTableComponent implements OnInit, OnChanges {
   users: Object;
-  resourceName: string;
+  resourceName: String;
   resourceCode: Number;
   // pagination
-  pagesize:number = 0;
-  page:number = 20;
+  pagesize: Number = 0;
+  page: Number = 20;
 
-  typing: string = '';
-  searchText: string;
+  typing: String = '';
+  searchText: String;
+
+  private columnArray: Array<any> = [];
+  private newAttribute: any = {};
 
   getData(typing) {
     this.typing = typing;
@@ -23,13 +26,19 @@ export class ResourcesTableComponent implements OnInit, OnChanges {
   }
 
   // toggles the ADD ROW display
-  public status:Boolean = false; // invoked from the child component (Update) toggles update child
+  public status: Boolean = false; // invoked from the child component (Update) toggles update child
 
   constructor(private data: MydataService) {}
   ngOnInit() {
-    this.data.getUser(this.pagesize,this.page).subscribe(data => {
+    this.data.getUser(this.pagesize, this.page).subscribe(data => {
       this.users = data['data'];
     });
+  }
+
+  addColumn() {
+
+    this.columnArray.push(this.newAttribute);
+
   }
 
   // adds data to the database
@@ -69,11 +78,13 @@ export class ResourcesTableComponent implements OnInit, OnChanges {
     });
   }
 
-  // pagination request 
+  // pagination request
   onSelectChange(pageLimit){
     this.page = pageLimit;
     this.data.getUser(this.pagesize,this.page).subscribe(data => {
       this.users = data['data'];
     });
   }
+
+
 }

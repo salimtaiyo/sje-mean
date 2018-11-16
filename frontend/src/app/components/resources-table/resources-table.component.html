@@ -11,19 +11,25 @@
 <div class="wrapper">
 
   <!-- search bar -->
+
   <app-search-bar (notify)=onNotifyClicked() (typingString)="getData($event)"></app-search-bar>
+
+  <button (click) = "addColumn()"> add column </button>
 
   <table *ngIf="users; else: emptyDb">
     <tr>
       <th>Resource Name</th>
       <th>Resource Code</th>
+      <th *ngFor = "let Column of columnArray;"> </th>
     </tr>
     <tr *ngFor="let user of users | filter : searchText">
       <td>{{ user.resource }}</td>
       <td>{{ user.code }}</td>
+      <td *ngFor = "let column of columnArray;" ></td>
     </tr>
 
     <!-- hidden content -->
+
     <tr *ngIf="status">
       <td>
         <input

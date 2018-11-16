@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'resource', component: ResourcesTableComponent, canActivate: [AuthGuard] },
   { path: 'formula', component: FormulaTableComponent, canActivate: [AuthGuard] },
   { path: 'project', component: ProjectTableComponent, canActivate: [AuthGuard] },
-  { path:'template', component:TemplateComponent, canActivate:[AuthGuard]}
+  { path: 'template', component: TemplateComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

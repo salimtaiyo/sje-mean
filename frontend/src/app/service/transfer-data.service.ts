@@ -10,7 +10,7 @@ export class TransferDataService {
 
   constructor() { }
 
-  changeMessage(message){
-    this.messageSource.next(message)
+  changeMessage(message) {
+    this.messageSource.next(message);
   }
 }
