@@ -19,14 +19,18 @@
     <tr>
       <th>Resource Name</th>
       <th>Resource Code</th>
+      <th>Item ID</th>
     </tr>
     <tr *ngFor="let data of dataProject; let i = index">
 
-      <td *ngIf = "i === editRowID"><input type = "text" placeholder="{{ data.resource}}" [(ngModel)] = "updateResource"> </td>
+      <td *ngIf = "i === editRowID"> <input type = "text" placeholder="{{ data.resource}}" [(ngModel)] = "updateResource" (keyup)="submitUpdate(data)"/> </td>
       <td *ngIf = "i !== editRowID" (click) = "checkEditRow(i)"> {{ data.resource}} <br/></td>
+      
 
-      <td *ngIf = "i === editRowID"><input type = "text" placeholder={{ data.code }} = "updateCode"> </td>
+      <td *ngIf = "i === editRowID"><input type = "text" placeholder="{{ data.code }}" [(ngModel)]= "updateCode"/> </td>
       <td *ngIf = "i !== editRowID" (click) = "checkEditRow(i)">{{ data.code }}</td>
+      
+      <td> {{ data._id}}</td>
 
     </tr>
   </table>
@@ -40,10 +44,8 @@
   <div style=" width: 90%; margin: 25px auto;">
     <a href="#" style="font-weight: bold;"> Edit Quantity Survey Template </a>
 
-    <button type="submit" (click) = "submitUpdate()"><i class="fas fa-check"></i> Submit</button>
+    <button type="submit" (click) = "submitUpdate($event)"><i class="fas fa-check"></i> Submit</button>
   </div>
 </div>
 
-{{ dataProject }}
 
-<div *ngFor="let data of dataProject">  hi {{ data[2]}}</div>

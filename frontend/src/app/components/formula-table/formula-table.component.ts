@@ -13,18 +13,19 @@ export class FormulaTableComponent implements OnInit {
   private dataProject;// data thats fetched from the DB
   dataArray=[]; // saves the value
 
+  // input
+  updateResource;
+  updateCode;
+
   constructor(private dataService:MydataService, private transferService:TransferDataService) {}
 
   ngOnInit() {
     this.transferService.currentMessage.subscribe(
       message => this.dataProject = message
-      // message => console.log(typeof message)
     )
-    console.log(this.dataProject);
   }
 
   // inline editing valuable
-
   showEditTable: boolean = false;
   editRowID: number;
 
@@ -32,8 +33,11 @@ export class FormulaTableComponent implements OnInit {
     this.editRowID = val;
   }
 
-  submitUpdate() {
-
+  submitUpdate(data) {
+    if(!this.updateCode){
+      this.updateCode = data.code;
+    }
+    console.log(this.updateResource,this.updateCode);
   }
 
 }
