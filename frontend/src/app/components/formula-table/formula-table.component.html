@@ -16,19 +16,25 @@
   </div>
 
   <table>
+
     <tr>
       <th>Resource Name</th>
       <th>Resource Code</th>
     </tr>
+
     <tr *ngFor="let data of dataProject; let i = index">
 
       <td *ngIf = "i === editRowID"><input type = "text" [(ngModel)] = "data[0]"> </td>
-      <td *ngIf = "i !== editRowID" (click) = "checkEditRow(i)"> {{ data[0]}} <br/></td>
+      <td *ngIf = "i !== editRowID" (click) = "checkEditRow(i)"> {{ data[0] }} <br/></td>
 
       <td *ngIf = "i === editRowID"><input type = "text" [(ngModel)] = "data[1]"> </td>
       <td *ngIf = "i !== editRowID" (click) = "checkEditRow(i)">{{ data[1] }}</td>
 
+      <td *ngIf = "i === editRowID"><input type = "text" [(ngModel)] = "data[2]"> </td>
+      <td *ngIf = "i !== editRowID" (click) = "checkEditRow(i)">{{ data[2] }}</td>
+
     </tr>
+
   </table>
 
   <div>

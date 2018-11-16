@@ -11,6 +11,7 @@
 <div class="wrapper">
 
   <!-- search bar -->
+
   <app-search-bar (notify)=onNotifyClicked() (typingString)="getData($event)"></app-search-bar>
 
   <table *ngIf="users; else: emptyDb">
@@ -24,6 +25,7 @@
     </tr>
 
     <!-- hidden content -->
+
     <tr *ngIf="status">
       <td>
         <input
