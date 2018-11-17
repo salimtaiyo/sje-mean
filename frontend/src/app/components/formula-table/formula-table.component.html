@@ -34,18 +34,9 @@
 
       <td> {{ data._id}}</td>
 
-      <td *ngIf = "i === editRowID"><input type = "text" [(ngModel)] = "data[2]"> </td>
-      <td *ngIf = "i !== editRowID" (click) = "checkEditRow(i)">{{ data[2] }}</td>
-
     </tr>
 
   </table>
-
-  <div>
-    <pre>
-      {{dataProject | json}}
-    </pre>
-  </div>
 
   <div style=" width: 90%; margin: 25px auto;">
     <a href="#" style="font-weight: bold;"> Edit Quantity Survey Template </a>

@@ -25,30 +25,23 @@ export class ProjectTableComponent implements OnInit {
     });
   }
 
-  transferPick(dataToTransfer) {
-    // this.dataProject.length = 0;
-    // let arr = dataToTransfer.target.value;
-
-    // let data = this.dataProject.find(item => item._id === arr);
-    // this.dataStorage.push(data);
-    // console.log(this.dataStorage);
-    
-    if (dataToTransfer.target.checked) {
-      let arr = dataToTransfer.target.value;
+  transferPick(value) {
+    // if the checkbox is checked
+    if (value.target.checked) {
+      let arr = value.target.value;
       let data = this.dataProject.find(item => item._id === arr);
       this.dataStorage.push(data);
-      // this.dataStorage.push(arr);
+
+      // if the user unchecks the checkbox 
     } else {
-      // remove from the array
-      
+      let arr = value.target.value;
+      let data = this.dataStorage.findIndex(item => item._id === arr);
+      this.dataStorage.splice(data,1);
     }
-    // let arr = dataToTransfer.split(',');
-    // this.dataStorage.push(arr);
   }
 
   transferToChild() {
     this.dataArray = this.dataStorage.slice();
-
   }
 
   checkallrecords() {

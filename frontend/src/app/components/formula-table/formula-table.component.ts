@@ -49,8 +49,6 @@ export class FormulaTableComponent implements OnInit {
       _id: data._id
 
     }
-    console.log(updatedValue);
-    
     this.dataService.updateData(updatedValue);
   }
 

@@ -8,14 +8,14 @@ import { MydataService } from '../../service/mydata.service';
 })
 export class ResourcesTableComponent implements OnInit, OnChanges {
   users: Object;
-  resourceName: String;
-  resourceCode: Number;
+  resourceName: string;
+  resourceCode: number;
   // pagination
-  pagesize: Number = 0;
-  page: Number = 20;
+  pagesize: number = 0;
+  page: number = 20;
 
-  typing: String = '';
-  searchText: String;
+  typing: string = '';
+  searchText: string;
 
   private columnArray: Array<any> = [];
   private newAttribute: any = {};
@@ -36,9 +36,7 @@ export class ResourcesTableComponent implements OnInit, OnChanges {
   }
 
   addColumn() {
-
     this.columnArray.push(this.newAttribute);
-
   }
 
   // adds data to the database
