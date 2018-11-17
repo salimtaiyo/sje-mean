@@ -55,12 +55,16 @@ input[type='checkbox'] {
 }
 
 .fa-trash-alt:before {
-  margin-left: 866%;
   color: #ffa500;
+  position: relative;
+  top: 75%;
+  left: 980%;
 }
 
 .fa-trash-alt:hover {
   text-shadow: 2px 2px 4px #000000;
+
+  cursor: pointer;
 }
 
 .topnav:hover,
@@ -70,17 +74,23 @@ table:hover {
 button {
   background-color: #ff5500e8;
   text-decoration: none;
-
-  width: 283px;
+  width: 189px;
   height: 36px;
   border: none;
   color: white;
   padding: 2px 32px;
   text-align: center;
   text-decoration: none;
-  display: block;
+  display: inline-block;
   font-size: 16px;
-  margin: 7px 28px;
+  margin: 10px 31px;
   cursor: pointer;
   margin-bottom: 5%;
+  outline: none;
+}
+
+button:hover {
+  text-shadow: 2px 2px 4px #000000;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 20px;
 }

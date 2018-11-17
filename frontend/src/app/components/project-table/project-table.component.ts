@@ -44,7 +44,13 @@ export class ProjectTableComponent implements OnInit {
     this.dataArray = this.dataStorage.slice();
   }
 
-  checkallrecords() {
-    this.dataStorage = this.dataProject;
+  checkallrecords(event) {
+    this.dataStorage = this.dataProject.slice();
+    this.checkAll = event.target.checked;
+  }
+
+  clearallRecords(event) {
+    this.dataStorage.length = 0;
+    this.checkAll = !event.target.checked;
   }
 }

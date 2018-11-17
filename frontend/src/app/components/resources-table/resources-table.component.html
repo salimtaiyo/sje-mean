@@ -9,40 +9,32 @@
 />
 
 <div class="wrapper">
-
   <!-- search bar -->
 
-  <app-search-bar (notify)=onNotifyClicked() (typingString)="getData($event)"></app-search-bar>
+  <app-search-bar
+    (notify)="onNotifyClicked()"
+    (typingString)="getData($event)"
+  ></app-search-bar>
 
-  <button (click) = "addColumn()"> add column </button>
+  <button (click)="addColumn()">add column</button>
 
   <table *ngIf="users; else: emptyDb">
     <tr>
       <th>Resource Name</th>
       <th>Resource Code</th>
-      <th *ngFor = "let Column of columnArray;"> </th>
+      <th *ngFor="let Column of columnArray"></th>
     </tr>
-    <tr *ngFor="let user of users | filter : searchText">
+    <tr *ngFor="let user of (users | filter: searchText)">
       <td>{{ user.resource }}</td>
       <td>{{ user.code }}</td>
-      <td *ngFor = "let column of columnArray;" ></td>
+      <td *ngFor="let column of columnArray"></td>
     </tr>
 
     <!-- hidden content -->
 
     <tr *ngIf="status">
-      <td>
-        <input
-          [(ngModel)]="resourceName"
-          type="text"
-        />
-      </td>
-      <td>
-        <input
-          type="number"
-          [(ngModel)]="resourceCode"
-        />
-      </td>
+      <td><input [(ngModel)]="resourceName" type="text" /></td>
+      <td><input type="number" [(ngModel)]="resourceCode" /></td>
     </tr>
     <tr *ngIf="status">
       <button type="button" class="enterNDiscard" (click)="addForm()">
@@ -54,15 +46,10 @@
     </tr>
   </table>
 
-  <div  (click)="onChange($event.target.value)"class="pagination">
-    <a>&laquo;</a>
-    <option  value="1">1</option>
-    <option  value="2">2</option>
-    <option  value="3">3</option>
-    <option  value="4">4</option>
-    <option  value="5">5</option>
-    <option  value="6">6</option>
-    <a>&raquo;</a>
+  <div (click)="onChange($event.target.value)" class="pagination">
+    <a>&laquo;</a> <option value="1">1</option> <option value="2">2</option>
+    <option value="3">3</option> <option value="4">4</option>
+    <option value="5">5</option> <option value="6">6</option> <a>&raquo;</a>
   </div>
 
   <select (change)="onSelectChange($event.target.value)">
@@ -78,5 +65,3 @@
     </h1>
   </ng-template>
 </div>
-
-

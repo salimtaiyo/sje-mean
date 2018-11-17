@@ -1,14 +1,14 @@
-
 /* fix */
-.fix{
+.fix {
   display: flex;
 }
 
-.fix__first{
+.fix__first {
   width: 50%;
+  margin-left: 2%;
 }
 
-.fix__second{
+.fix__second {
   width: 50%;
 }
 
@@ -17,26 +17,25 @@
 .topnav {
   display: flex;
   background-color: #584d4d94;
-  width: 70%;
+  width: 72%;
   margin-top: 5%;
 }
-.topnav__header h3{
+.topnav__header h3 {
   text-align: center;
   transform: translateX(110%);
 }
 
-.topnav__icons{
+.topnav__icons {
   display: flex;
   align-items: center;
   transform: translateX(15rem);
 }
 
-
 table {
   margin-top: 0.5%;
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 70%;
+  width: 72%;
 }
 
 td,
@@ -46,8 +45,77 @@ th {
   padding: 8px;
 }
 
-th{
-  background-color:#dddddd;
+th {
+  background-color: #dddddd;
+}
+/*===================== hovering:shadow fro table and navbar =================*/
+.topnav:hover,
+table:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/*===================== icons padding color and hover:shadow =================*/
+/* export icon */
+.fa-file-export:before {
+  padding: 72%;
+  margin-left: -138%;
+  color: #ffa500;
 }
 
+.fa-file-export:hover {
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 23px;
+  cursor: pointer;
+}
+/* list icon */
+.fa-list-ul {
+  color: #ffa500;
+}
 
+.fa-list-ul:hover {
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+/* pinter on input checkbox */
+input[type='checkbox' i] {
+  cursor: pointer;
+}
+
+/* ================= drop down menu ===================== */
+/* ======================================================= */
+.dropdown-content {
+  display: block;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content {
+  float: none;
+  margin-left: -75%;
+  position: absolute;
+  top: 84%;
+}
+.columIcon {
+  margin-right: 20px;
+}

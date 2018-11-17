@@ -10,8 +10,8 @@ import { TransferDataService } from 'src/app/service/transfer-data.service';
 export class Project2TableComponent implements OnInit {
 
   @Input() datas;
-  indexArr:Array<number> = [];
-  savedArr:Array<any> = [];
+  indexArr:Array<any> = [];
+  savedArr;
   message;
   mappedData;
   
@@ -25,13 +25,17 @@ export class Project2TableComponent implements OnInit {
     
   }
 
-  deleteRowIndex(id) { this.indexArr.push(id);}
-
-  saveArray(data){
-    // let dataArray = data.toString().split(',')
-    this.savedArr.push(data)
-    console.log(this.savedArr);
+  deleteRowIndex(...arr) { 
+    let event = arr[0];
+  
+    if(event.target.checked){
+      this.indexArr.push(event.target.value);
+    } 
     
+    else{
+      let index = this.indexArr.findIndex(item => item === event.target.value)
+      this.indexArr.splice(index,1);
+    }
   }
 
   deleteRow() {
@@ -40,11 +44,12 @@ export class Project2TableComponent implements OnInit {
       this.datas.splice(index,1);
       index = null;
     }
+    
     this.indexArr.length =0;
   }
- 
-  // emmitter
-  newMessage(){
+
+  saveArray(){
+    this.savedArr = this.datas.slice(); 
     this.transferService.changeMessage(this.savedArr);
   }
 }
