@@ -32,7 +32,7 @@ export class ProjectTableComponent implements OnInit {
     // let data = this.dataProject.find(item => item._id === arr);
     // this.dataStorage.push(data);
     // console.log(this.dataStorage);
-    
+
     if (dataToTransfer.target.checked) {
       let arr = dataToTransfer.target.value;
       let data = this.dataProject.find(item => item._id === arr);
@@ -40,7 +40,6 @@ export class ProjectTableComponent implements OnInit {
       // this.dataStorage.push(arr);
     } else {
       // remove from the array
-      
     }
     // let arr = dataToTransfer.split(',');
     // this.dataStorage.push(arr);
@@ -48,10 +47,14 @@ export class ProjectTableComponent implements OnInit {
 
   transferToChild() {
     this.dataArray = this.dataStorage.slice();
-
   }
 
-  checkallrecords() {
+  checkallrecords(event) {
     this.dataStorage = this.dataProject;
+    this.checkAll = event.target.checked;
+  }
+  clearallRecords(event) {
+    this.dataStorage = this.dataProject;
+    this.checkAll = !event.target.checked;
   }
 }
