@@ -1,4 +1,4 @@
-import { Component, OnInit,DoCheck, OnChanges } from '@angular/core';
+import { Component, OnInit, DoCheck, OnChanges } from '@angular/core';
 import { MydataService } from '../../service/mydata.service';
 
 @Component({
@@ -36,55 +36,51 @@ export class ResourcesTableComponent implements OnInit, OnChanges {
   }
 
   addColumn() {
-
     this.columnArray.push(this.newAttribute);
-
   }
 
   // adds data to the database
-  addForm(){
+  addForm() {
     // adds the data
     this.data.postUser(this.resourceName, this.resourceCode);
     // updates the data
-    this.data.getUser(this.pagesize,this.page).subscribe(data => {
+    this.data.getUser(this.pagesize, this.page).subscribe(data => {
       this.users = data['data'];
     });
     // toggles the display
     this.status = !this.status;
   }
   ngOnChanges() {
-    this.data.getUser(this.pagesize,this.page).subscribe(data => {
+    this.data.getUser(this.pagesize, this.page).subscribe(data => {
       this.users = data['data'];
     });
-}
+  }
 
   // invoked from the  child component
-  onNotifyClicked(message:Boolean):void{
+  onNotifyClicked(message: Boolean): void {
     this.status = !this.status;
   }
 
   // on cancel of the ADD INPUT
-  onDiscard(){
-    this.resourceName = "";
+  onDiscard() {
+    this.resourceName = '';
     this.resourceCode = null;
     this.status = !this.status;
   }
 
   // pagination value getter
-  onChange(pageIndex){
-    this.pagesize = pageIndex -1;
-    this.data.getUser(this.pagesize,this.page).subscribe(data => {
+  onChange(pageIndex) {
+    this.pagesize = pageIndex - 1;
+    this.data.getUser(this.pagesize, this.page).subscribe(data => {
       this.users = data['data'];
     });
   }
 
   // pagination request
-  onSelectChange(pageLimit){
+  onSelectChange(pageLimit) {
     this.page = pageLimit;
-    this.data.getUser(this.pagesize,this.page).subscribe(data => {
+    this.data.getUser(this.pagesize, this.page).subscribe(data => {
       this.users = data['data'];
     });
   }
-
-
 }
