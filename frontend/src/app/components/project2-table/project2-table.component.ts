@@ -35,7 +35,6 @@ export class Project2TableComponent implements OnInit {
   }
 
   deleteRow() {
-    this.animateDelete = !this.animateDelete;
     for (let i = 0; i < this.indexArr.length; i++) {
       let index = this.datas.findIndex(item => item._id === this.indexArr[i]);
       this.datas.splice(index, 1);
