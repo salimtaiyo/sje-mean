@@ -4,10 +4,14 @@
   integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
   crossorigin="anonymous"
 />
-
+<!-- cdn for animate.css -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
+/>
 <div class="wrapper">
   <div class="topnav">
-    <h3>Project <i class="far fa-trash-alt" ></i></h3>
+    <h3>Project <i class="far fa-trash-alt"></i></h3>
   </div>
   <table>
     <tr>
@@ -16,23 +20,28 @@
     </tr>
 
     <!-- loops through the ARRAY received from the PARENT component -->
-    <tr *ngFor="let data of datas; let i = index">
-          <!-- <span *ngFor="let data of item"> -->
-          <td value="i">
-              <input
-                (click)="deleteRowIndex($event,data)"
-                type="checkbox"
-                name="checked"
-                value="{{data._id}}"
-              />
-              {{ data.resource }}
-            </td>
-            <td attr.data-value="{{data[1]}}">{{ data.code }}</td>
-          <!-- </span> -->
+    <tr
+      *ngFor="let data of datas; let i = index"
+      [ngClass]="{ 'animated bounceInDown': true }"
+    >
+      <!-- <span *ngFor="let data of item"> -->
+      <td value="i">
+        <input
+          (click)="deleteRowIndex($event, data)"
+          type="checkbox"
+          name="checked"
+          value="{{data._id}}"
+        />
+        {{ data.resource }}
+      </td>
+      <td attr.data-value="{{data[1]}}">{{ data.code }}</td>
+      <!-- </span> -->
     </tr>
   </table>
 </div>
 
-<button (click)="saveArray()" routerLink="/formula" type="button" class="login">Submit</button>
+<button routerLink="/formula" type="button" class="login">Submit</button>
 
-<button (click)="deleteRow()"> Delete </button>
+<button (click)="deleteRow()" [ngClass]="{ 'animated 	bounce': animateDelete }">
+  Delete
+</button>

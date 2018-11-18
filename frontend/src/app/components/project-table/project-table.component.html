@@ -1,9 +1,14 @@
 <app-header></app-header>
 <app-navbar></app-navbar>
+<!-- cdn for animate.css -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
+/>
 
 <div class="fix">
   <!-- first table -->
-  <div class="fix__first">
+  <div class="fix__first animated bounceInLeft">
     <!-- header -->
     <div class="topnav">
       <!-- headers child div first -->
@@ -38,7 +43,7 @@
       </tr>
 
       <tr *ngFor="let data of dataProject">
-        <td>
+        <td [ngClass]="{ 'animated flash': checkAll == true }">
           <input
             (click)="transferPick($event)"
             type="checkbox"
@@ -57,7 +62,7 @@
   <!--
     the child component is attached with an [datas] for @Input communication
   -->
-  <div class="fix__second">
+  <div class="fix__second animated bounceInRight">
     <app-project2-table [datas]="dataArray"></app-project2-table>
   </div>
 </div>

@@ -6,50 +6,47 @@ import { TransferDataService } from 'src/app/service/transfer-data.service';
   templateUrl: './project2-table.component.html',
   styleUrls: ['./project2-table.component.css']
 })
-
 export class Project2TableComponent implements OnInit {
+  animateDelete: Boolean = false;
 
   @Input() datas;
-  indexArr:Array<any> = [];
+  indexArr: Array<any> = [];
   savedArr;
   message;
   mappedData;
-  
 
-  constructor( private transferService:TransferDataService ) { }
+  constructor(private transferService: TransferDataService) {}
 
   ngOnInit() {
     this.transferService.currentMessage.subscribe(
-      message => this.message = message
-    )
-    
+      message => (this.message = message)
+    );
   }
 
-  deleteRowIndex(...arr) { 
+  deleteRowIndex(...arr) {
     let event = arr[0];
-  
-    if(event.target.checked){
+
+    if (event.target.checked) {
       this.indexArr.push(event.target.value);
-    } 
-    
-    else{
-      let index = this.indexArr.findIndex(item => item === event.target.value)
-      this.indexArr.splice(index,1);
+    } else {
+      let index = this.indexArr.findIndex(item => item === event.target.value);
+      this.indexArr.splice(index, 1);
     }
   }
 
   deleteRow() {
+    this.animateDelete = !this.animateDelete;
     for (let i = 0; i < this.indexArr.length; i++) {
       let index = this.datas.findIndex(item => item._id === this.indexArr[i]);
-      this.datas.splice(index,1);
+      this.datas.splice(index, 1);
       index = null;
     }
-    
-    this.indexArr.length =0;
+
+    this.indexArr.length = 0;
   }
 
-  saveArray(){
-    this.savedArr = this.datas.slice(); 
+  saveArray() {
+    this.savedArr = this.datas.slice();
     this.transferService.changeMessage(this.savedArr);
   }
 }
