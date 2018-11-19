@@ -7,7 +7,7 @@ import { MydataService } from '../../service/mydata.service';
   styleUrls: ['./resources-table.component.css']
 })
 export class ResourcesTableComponent implements OnInit, OnChanges {
-  users: Object;
+  users: object;
   resourceName: string;
   resourceCode: number;
 
@@ -19,25 +19,39 @@ export class ResourcesTableComponent implements OnInit, OnChanges {
   searchText: string;
 
   private columnArray: Array<any> = [];
+
   private newAttribute: any = {};
+
+  colTitleArray: Array<any> = []; // to store the col title (from search bar component)
+
+  // get the search text from search bar component
 
   getData(typing) {
     this.typing = typing;
     this.searchText = typing;
   }
 
+  // get the col title from search bar component
+
+  getColTitle(colTitle) {
+
+    this.colTitleArray.push(colTitle);
+
+    console.log(this.colTitleArray);
+
+    this.columnArray.push(this.newAttribute);
+  }
+
   // toggles the ADD ROW display
+
   public status: Boolean = false; // invoked from the child component (Update) toggles update child
 
   constructor(private data: MydataService) {}
+
   ngOnInit() {
     this.data.getUser(this.pagesize, this.page).subscribe(data => {
       this.users = data['data'];
     });
-  }
-
-  addColumn() {
-    this.columnArray.push(this.newAttribute);
   }
 
   // adds data to the database

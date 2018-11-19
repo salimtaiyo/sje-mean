@@ -28,6 +28,7 @@
     "core-js": "^2.5.4",
     "express": "^4.16.4",
     "mongoose": "^5.3.11",
+    "ng2-opd-popup": "^1.1.21",
     "nodemon": "^1.18.6",
     "primeicons": "^1.0.0",
     "primeng": "^7.0.0-beta.1",
