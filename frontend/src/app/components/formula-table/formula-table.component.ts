@@ -62,4 +62,8 @@ export class FormulaTableComponent implements OnInit {
     this.dataService.updateData(updatedValue);
   }
 
+  jjj(e){
+    console.log(e);
+    
+  }
 }
