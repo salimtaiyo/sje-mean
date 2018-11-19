@@ -1,99 +1,99 @@
-tr, td {
-
-    border: 1px solid rgb(161, 157, 157);
+tr,
+td {
+  border: 1px solid rgb(161, 157, 157);
 }
 
 td {
-    padding: 1rem 0;
-    padding-left: 3%;
+  padding: 1rem 0;
+  padding-left: 3%;
 }
 
 button {
-    background-color: orange;
-    color: white;
-    cursor: pointer;
+  background-color: orange;
+  color: white;
+  cursor: pointer;
 }
 
 .rightInput {
-
-    width: 60%;
-
+  width: 60%;
 }
 
-.container{
-    width: 80%;
-    border: 1px solid rgb(46, 45, 45);
-    margin: 0 auto;
+.container {
+  width: 80%;
+  border: 1px solid rgb(46, 45, 45);
+  margin: 0 auto;
+
+  position: absolute;
+  top: 176px;
+  left: 91px;
 }
 
 /* flex box for whole table */
 
-.child{
-    display: flex;
+.child {
+  display: flex;
 }
 
 /* topLeft */
 
-.child__scope{
-    position: relative;
-    display: inline-block;
-    background-color: white;
-    width: 30%;
-    padding: 0rem .5rem;
+.child__scope {
+  position: relative;
+  display: inline-block;
+  background-color: white;
+  width: 30%;
+  padding: 0rem 0.5rem;
 }
-
 
 .tableLeft {
-    width: 100%;
-    border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.child__scope tr{
-    background-color: rgb(189, 186, 186);
-    width: 100%;
+.child__scope tr {
+  background-color: rgb(189, 186, 186);
+  width: 100%;
 }
 
-.child__scope tr:nth-child(even){
-    background-color: white;
-    width: 100%;
+.child__scope tr:nth-child(even) {
+  background-color: white;
+  width: 100%;
 }
-
 
 /* topRight */
 
-.child__survey{
-    position: relative;
-    display: inline-block;
-    background-color: white;
-    width: 70%;
-    border-left: 1px solid black;
-    padding: 0rem 1rem;
+.child__survey {
+  position: relative;
+  display: inline-block;
+  background-color: white;
+  width: 70%;
+  border-left: 1px solid black;
+  padding: 0rem 1rem;
 }
 
 .tableRightHeader {
-    width: 90%;
-    background-color: rgb(189, 186, 186);
-    padding: 1rem 1rem;
-    font-weight: bold;
+  width: 90%;
+  background-color: rgb(189, 186, 186);
+  padding: 1rem 1rem;
+  font-weight: bold;
 }
 
 .tableRight {
-
-    width: 100%;
-    border-spacing: 0px 15px;
-
+  width: 100%;
+  border-spacing: 0px 15px;
 }
 
 .tableRight tr {
-
-    background-color: rgb(189, 186, 186);
-
+  background-color: rgb(189, 186, 186);
 }
 
 /* buttom */
 
-.childTwo{
-    height: 5rem;
-    border-top: 1px solid rgb(46, 45, 45);
+.childTwo {
+  height: 5rem;
+  border-top: 1px solid rgb(46, 45, 45);
 }
-
+.saveButton {
+  position: absolute;
+  top: 124px;
+  left: 68%;
+}
