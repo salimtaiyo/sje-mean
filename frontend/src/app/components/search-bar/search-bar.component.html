@@ -4,23 +4,57 @@
   integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
   crossorigin="anonymous"
 />
+
+
 <div class="topnav">
+
   <div class="search-container">
+
     <form>
       <input #typingData (keyup) = "sendTypingString(typingData.value)" type="text" placeholder="Keyword" name="search">
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>
+
   </div>
 
   <h5>Resource catalog</h5>
+
   <div class="iconx">
-    <div class="dropdown" (click)="show = !show">
-      <i class="fas fa-plus-square orange fa-lg '"></i>
+    <div class="dropdown" >
+
+      <i (click)="show = !show" class="fas fa-plus-square orange fa-lg '"></i>
+
       <div class="dropdown-content" *ngIf="show">
+
         <a (click)="onClick()"><i class="fas fa-align-left columIcon"></i>Add Row</a>
-        <a href="#"><i class="fas fa-columns columIcon"></i>Add Collumn</a>
+        <a class = "addCol" (click) = "showAddColWindow = true"><i class="fas fa-columns columIcon"></i>Add Collumn  
+
+          <div *ngIf = "showAddColWindow">
+
+              <span class="dialog" >     
+                <p style = "visibility: hidden;"> .. </p>           
+                <label> Column Title </label> 
+                <input #colTitle type = "text" style = "width: 90%">
+              </span>
+
+              <span class="buttonSpan">
+                <div style="display: inline-block; vertical-align: middle; height: 100%;">
+                </div>
+                <button (click) = "closedPopup(); " style = "margin-right: 25px;"> Discard </button>
+                <button (click) = "sendColTitle(colTitle.value)"> Submit </button>
+              </span>
+
+            </div>
+
+        </a>          
+        
         <a href="#"><i class="far fa-file-excel columIcon"></i>Import CSV</a>
-      </div>
+
+      </div>    
     </div>
   </div>
 </div>
+
+
+
+
