@@ -119,3 +119,8 @@ input[type='checkbox' i] {
 .columIcon {
   margin-right: 20px;
 }
+tr:hover {
+  background-color: #584d4d4f;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
