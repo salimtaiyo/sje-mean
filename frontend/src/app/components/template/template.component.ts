@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 
 @Component({
   selector: 'app-template',
@@ -10,6 +10,11 @@ export class TemplateComponent implements OnInit {
 
   private fieldArray: Array<any> = []; // to store the field that the user added
   private newAttribute: any = {}; // the value of the field
+
+  checkCode: boolean = true;
+  checkId: boolean = true;
+
+  checkArray: Array<any> = [true, true];
 
   constructor() { }
 
@@ -25,7 +30,19 @@ export class TemplateComponent implements OnInit {
 
   }
 
-  ngOnInit() {
+  changeValue() {
+
+    this.checkArray[0] = this.checkCode;
+    this.checkArray[1] = this.checkId;
+
+    console.log("check code: " + this.checkCode);
+    console.log("check id: " + this.checkId);
+
+    console.log(this.checkArray);
+
   }
 
+  ngOnInit() {
+
+  }
 }

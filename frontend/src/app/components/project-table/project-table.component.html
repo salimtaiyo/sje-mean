@@ -23,47 +23,61 @@
         <div class="iconx">
           <div class="dropdown" (click)="show = !show">
             <span class="list"><i class="fas fa-list-ul orange "> </i></span>
+
             <div class="dropdown-content" *ngIf="show">
+
               <a (click)="checkallrecords($event)">
                 <input type="checkbox" name="checked" /> Select All
               </a>
+
               <a (click)="clearallRecords($event)">
                 <input type="checkbox" name="checked" /> Clear Selection
               </a>
+
             </div>
           </div>
         </div>
       </div>
     </div>
+
     <!-- table -->
     <table>
+
       <tr>
         <th>PROJECT NAME</th>
         <th>PROJECT CODE</th>
       </tr>
 
       <tr *ngFor="let data of dataProject">
+
         <td [ngClass]="{ 'animated flash': checkAll == true }">
           <input
             (click)="transferPick($event)"
             type="checkbox"
             name="checked"
             value="{{data._id}}"
-            [attr.checked]="checkAll ? 'checked' : null"
-          />
+            [attr.checked]="checkAll ? 'checked' : null"/>
+
           {{ data.resource }} <br />
+
         </td>
+
         <td>{{ data.code }}</td>
+
       </tr>
+
     </table>
   </div>
 
   <!-- second table -->
+
   <!--
     the child component is attached with an [datas] for @Input communication
   -->
+
   <div class="fix__second animated bounceInRight">
     <app-project2-table [datas]="dataArray"></app-project2-table>
   </div>
+
 </div>
 <!-- parent contianer -->

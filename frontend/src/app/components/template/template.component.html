@@ -27,14 +27,19 @@
           <td> </td>
         </tr>
 
+        <!-- <tr *ngFor = "let row of rowList; let i = index">
+          <td>{{row.title}}</td>
+          <td><input [(ngModel)] = "check" type="checkbox"></td>
+        </tr> -->
+
         <tr>
-          <td>name</td>
-          <td><input type="checkbox" /></td>
-        </tr>
+            <td>name</td>
+            <td><input type="checkbox"></td>
+          </tr>
 
         <tr>
           <td>cost_code</td>
-          <td><input type="checkbox" /></td>
+          <td><input (click) = "changeValue()" [(ngModel)] = "checkCode" type="checkbox" /></td>
         </tr>
 
         <tr>
@@ -44,7 +49,7 @@
 
         <tr>
           <td>item_id</td>
-          <td><input type="checkbox" /></td>
+          <td><input [(ngModel)] = "checkId" type="checkbox" /></td>
         </tr>
 
       </table>
