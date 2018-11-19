@@ -29,10 +29,15 @@ export class ProjectTableComponent implements OnInit {
     // if the checkbox is checked
     if (value.target.checked) {
       let arr = value.target.value;
+
+      console.log(value.target.checked);
+
+      console.log(arr);
+
       let data = this.dataProject.find(item => item._id === arr);
       this.dataStorage.push(data);
 
-      // if the user unchecks the checkbox 
+      // if the user unchecks the checkbox
     } else {
       let arr = value.target.value;
       let data = this.dataStorage.findIndex(item => item._id === arr);
