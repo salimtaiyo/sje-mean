@@ -9,7 +9,6 @@ import { TransferDataService } from 'src/app/service/transfer-data.service';
 })
 
 export class FormulaTableComponent implements OnInit {
-
   private dataProject;// data thats fetched from the DB
   dataArray=[]; // saves the value
 
@@ -17,12 +16,24 @@ export class FormulaTableComponent implements OnInit {
   updateResource;
   updateCode;
 
+  // Inserting column from the TEMPLATE PAGE
+  templateArray = [];
   constructor(private dataService:MydataService, private transferService:TransferDataService) {}
 
   ngOnInit() {
     this.transferService.currentMessage.subscribe(
       message => this.dataProject = message
     )
+
+    this.transferService.data.subscribe(data => {
+      // console.log(data);
+      
+      for(let i =0; i< data.length; i++){
+      this.templateArray.push(data[i]);
+
+      };
+      console.log(this.templateArray);
+    })
   }
 
   // inline editing valuable
@@ -42,7 +53,6 @@ export class FormulaTableComponent implements OnInit {
       this.updateResource = data.resource;
     }
 
-    // console.log(this.updateResource,this.updateCode,data._id);
     const updatedValue = {
       resource : this.updateResource,
       code: this.updateCode,

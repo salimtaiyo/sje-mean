@@ -5,6 +5,11 @@ table {
   width: 100%;
 }
 
+.table__scroll {
+  height: 30rem;
+  overflow: scroll;
+}
+
 td,
 th {
   border: 1px solid #dddddd;
@@ -13,8 +18,11 @@ th {
 }
 
 .wrapper {
-  width: 90%;
-  margin: 5% auto;
+  width: 85%;
+  margin: 6% auto;
+  position: absolute;
+  top: 84px;
+  left: 51px;
 }
 th {
   text-align: center;
@@ -24,12 +32,6 @@ th {
 * {
   box-sizing: border-box;
 }
-
-/* body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-    } */
-
 .topnav {
   overflow: hidden;
   background-color: #584d4d94;
@@ -142,20 +144,20 @@ input[type='number']:focus {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-
 /* pagination */
 .pagination {
-  display: inline-block;
+  display: inline-flex;
+  transform: translateX(123%);
 }
 
-.pagination a, .pagination option {
+.pagination a,
+.pagination option {
   color: black;
-  float: left;
   padding: 8px 16px;
   text-decoration: none;
 }
 
-.pagination option:hover{
+.pagination option:hover {
   cursor: pointer;
   color: #ff5500e8;
 }

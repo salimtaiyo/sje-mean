@@ -11,20 +11,16 @@
 <!-- parent container for the two rows inside -->
 
 <div class="container">
-
   <!-- child container that contains two column -->
 
   <div class="child">
-
     <!-- left table -->
 
     <div class="child__scope">
-
       <table class="tableLeft">
-
         <tr>
           <td style="font-weight: bold;">Project Scope Fields</td>
-          <td> </td>
+          <td></td>
         </tr>
 
         <!-- <tr *ngFor = "let row of rowList; let i = index">
@@ -51,62 +47,60 @@
           <td>item_id</td>
           <td><input [(ngModel)] = "checkId" type="checkbox" /></td>
         </tr>
-
       </table>
-
     </div>
 
     <!-- right table -->
 
     <div class="child__survey">
-
       <table class="tableRight">
-
-        <td style="background-color: rgb(189, 186, 186);"> Quantity Survey Fields </td>
-
+        <td style="background-color: rgb(189, 186, 186);">
+          Quantity Survey Fields
+        </td>
       </table>
 
       <!-- right table body -->
 
       <table class="tableRight">
-
         <!-- the field that users can add into the table -->
 
         <tr *ngFor = "let data of fieldArray; let i = index">
 
           <td> Field <br/>
-            <input type="text" class="rightInput" />
-          </td>
-
-          <td> Type <br/>
-            <input type="number" placeholder="Number" class="rightInput"/>
-          </td>
-
-          <td> Formula <br/>
-            <input type="text" placeholder="quantity * price" class="rightInput"/>
+            <input type="text" (keydown.enter)="templateArray($event)" class="rightInput"/>
           </td>
 
           <td>
-            <button (click) = "removeField(i)" style="width: 30px; height: 30px;">
+            Type <br />
+            <select (change)="changeOption($event)">
+              <option value="Number"> Number </option>
+              <option value="Text"> Text </option>
+              <option value="Formula"> Formula </option>
+            </select>
+          </td>
+
+          <td *ngIf="hideFormula">
+            Formula <br />
+            <input type="text" [(ngModel)]="formulaInput" class="rightInput" />
+          </td>
+
+          <td>
+            <button (click)="removeField(i)" style="width: 30px; height: 30px;">
               <i class="fas fa-trash-alt"></i>
             </button>
           </td>
-
         </tr>
-
       </table>
 
-      <!-- button of add field  -->
+      <!-- button of add field -->
 
       <div style="width: 100%; background-color: green;">
         <div style="float: right;">
-
           <label style="margin-right: 5px;">Add Field</label>
 
-          <button (click) = "addField()" style="width: 30px; height: 30px;">
+          <button (click)="addField()" style="width: 30px; height: 30px;">
             <i class="fas fa-plus "></i>
           </button>
-
         </div>
       </div>
     </div>
@@ -114,12 +108,13 @@
 
   <!-- Bottom -->
 
-  <div class="childTwo"> </div>
-
+  <div class="childTwo"></div>
 </div>
 
 <div style=" width: 80%; margin: 25px auto;">
 
-  <button type="submit" style="width: 20%; float: right; padding: 8px 0;"> Save </button>
-
+  <button type="submit"
+          style="width: 20%; float: right; padding: 8px 0;"
+          routerLink="/formula"
+          (click)="save()"> Save </button>
 </div>
