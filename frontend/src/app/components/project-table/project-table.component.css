@@ -1,6 +1,11 @@
 /* fix */
 .fix {
   display: flex;
+  width: 97%;
+  margin: 6% auto;
+  position: absolute;
+  top: 84px;
+  left: 60px;
 }
 
 .fix__first {
