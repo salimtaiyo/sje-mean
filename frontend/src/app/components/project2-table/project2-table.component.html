@@ -15,14 +15,17 @@
     </tr>
 
     <!-- loops through the ARRAY received from the PARENT component -->
-    <tr *ngFor="let data of datas; let i = index">
+    <tr
+      *ngFor="let data of datas; let i = index"
+      [ngClass]="{ 'animated bounceInLeft': true }"
+    >
       <!-- <span *ngFor="let data of item"> -->
       <td value="i">
         <input
           (click)="deleteRowIndex($event, data)"
           type="checkbox"
           name="checked"
-          value="{{data._id}}"
+          value="{{ data._id }}"
         />
         {{ data.resource }}
       </td>
