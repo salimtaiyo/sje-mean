@@ -27,6 +27,9 @@
   <span>
 
     <label class="personInfo" ><i (click)="show = !show" class="fas fa-user-circle fa-2x" style="margin: 0 .5rem"></i>
+
+      <!-- pop up user information -->
+      
        <div *ngIf = "show">
         <span class="dialog" >
           <p style = "visibility: hidden;"> .. </p>
@@ -41,6 +44,7 @@
           <button (click) = "signOut()" routerLink='../'> sign out </button>
         </span>
       </div>
+
     </label>
 
     <label style="margin: 0 .5rem"> Cost Manager </label>

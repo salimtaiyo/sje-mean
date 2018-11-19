@@ -17,7 +17,6 @@ export class HeaderComponent implements OnInit {
     
   }
 
-
   public signOut() {
     localStorage.removeItem("token");
     localStorage.removeItem("expiration");

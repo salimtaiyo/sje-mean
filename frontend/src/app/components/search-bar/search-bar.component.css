@@ -111,3 +111,55 @@ h5 {
 .columIcon {
   margin-right: 20px;
 }
+
+/* add column pop */
+
+.addCol span.dialog {
+  position: absolute;
+  display: block;
+}
+
+.addCol span.buttonSpan {
+  position: absolute;
+  display: block;
+}
+
+span.dialog {
+
+  background:rgb(185, 178, 178);
+    color: black;
+    font-size: 13px;
+    width: 200px;
+    height: 150px;
+    letter-spacing: 1px;
+    line-height: 10px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 0px;
+    left: -200px;
+    display:none;
+    padding:0 20px;
+    z-index: 5;
+
+}
+
+ span.buttonSpan {
+
+  background:rgb(185, 178, 178);
+    color: white;
+    font-size: 13px;
+    width: 200px;
+    height: 50px;
+    letter-spacing: 1px;
+    line-height: 30px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 100px;
+    left: -200px;
+    display:none;
+    padding:0 20px;
+    z-index: 5;
+
+}
