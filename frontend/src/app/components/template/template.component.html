@@ -18,15 +18,11 @@
 
     <div class="child__scope">
       <table class="tableLeft">
+
         <tr>
           <td style="font-weight: bold;">Project Scope Fields</td>
           <td></td>
         </tr>
-
-        <!-- <tr *ngFor = "let row of rowList; let i = index">
-          <td>{{row.title}}</td>
-          <td><input [(ngModel)] = "check" type="checkbox"></td>
-        </tr> -->
 
         <tr>
             <td>name</td>
@@ -35,7 +31,7 @@
 
         <tr>
           <td>cost_code</td>
-          <td><input (click) = "changeValue()" [(ngModel)] = "checkCode" type="checkbox" /></td>
+          <td><input (click) = "changeCode($event)" type="checkbox" /></td> <!-- check the value of code -->
         </tr>
 
         <tr>
@@ -45,8 +41,9 @@
 
         <tr>
           <td>item_id</td>
-          <td><input (click) = "changeValue()" [(ngModel)] = "checkId" type="checkbox" /></td>
+          <td><input (click) = "changeId($event)" type="checkbox" /></td> <!-- check the value of id -->
         </tr>
+
       </table>
     </div>
 

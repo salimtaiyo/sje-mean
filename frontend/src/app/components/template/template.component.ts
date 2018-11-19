@@ -15,44 +15,74 @@ export class TemplateComponent implements OnInit {
   fieldInput: any;
   formulaInput: any;
 
-  templateData =[];
+  templateData = [];
 
   // ADD FIELDS
+
   private fieldArray: Array<any> = []; // to store the field that the user added
   private newAttribute: any = {}; // the value of the field
 
-  checkCode: boolean = false;
-  checkId: boolean = false;
+  // check the box of left table
 
-  checkArray: Array<any> = [true, true];
+  checkCode: boolean = false; // for code column
+  checkId: boolean = false; // for id column
+
+  checkArray: Array<any> = [true, true]; // to store the status of two column
 
   constructor(private dataToFormula: TransferDataService) { }
 
-  addField() {
+  addField() { // to add field of right table
 
     this.fieldArray.push(this.newAttribute);
 
   }
 
-  removeField(index) {
+  removeField(index) { // remove the field of the right table
 
     this.fieldArray.splice(index, 1);
 
   }
 
-  changeValue() {
+  changeCode(e) { // for the code column
 
-    this.checkArray[0] = this.checkCode;
-    this.checkArray[1] = this.checkId;
+    // if the user checked the option (true), the value of the array will go (false).
 
-    console.log("check code: " + this.checkCode);
-    console.log("check id: " + this.checkId);
+    if (e.target.checked === true) {
 
-    console.log(this.checkArray);
+      this.checkArray[0] = false;
+
+    } else {
+
+      this.checkArray[0] = true;
+
+    }
+
+    // console.log('code:' + e.target.checked);
+
+
+    // console.log(this.checkArray);
 
   }
 
-  sendIfChange() {
+  changeId(e) { // for the id column
+
+    if (e.target.checked === true) {
+
+      this.checkArray[1] = false;
+
+    } else {
+
+      this.checkArray[1] = true;
+
+    }
+
+    // console.log('id:' + e.target.checked);
+
+    // console.log (this.checkArray);
+
+  }
+
+  sendIfChange() { // send to the formula
 
     this.dataToFormula.templateBool(this.checkArray);
 
@@ -60,7 +90,9 @@ export class TemplateComponent implements OnInit {
 
   // SELECT field
   changeOption(e) {
+
     // toggling the display of "FORMULA"
+
     if (e.target.value === "Formula") {
     this.hideFormula = !this.hideFormula;
     } else {
@@ -69,11 +101,13 @@ export class TemplateComponent implements OnInit {
   }
 
   // sends data to the FORMULA page
+
   save() {
     this.dataToFormula.templateData(this.templateData);
   }
 
   // pushes data from the FIELD to "templateData" variable thats going to be sent to the FORMULA PAGE
+
   templateArray(e) {
     this.templateData.push(e.target.value);
   }
@@ -81,6 +115,5 @@ export class TemplateComponent implements OnInit {
   ngOnInit() {
 
   }
-
 
 }

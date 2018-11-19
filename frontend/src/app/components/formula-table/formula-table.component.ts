@@ -28,9 +28,6 @@ export class FormulaTableComponent implements OnInit {
 
   ngOnInit() {
 
-    // this.checkCode = true;
-    // this.checkId = true;
-
     this.transferService.currentMessage.subscribe(
       message => this.dataProject = message
     );
@@ -45,18 +42,23 @@ export class FormulaTableComponent implements OnInit {
 
     });
 
-  }
-
-  AfterViewInit() {
-
     // get the status from template page
 
     this.transferService.check.subscribe(check => {
 
       console.log(check);
 
-       this.checkCode = check[0];
-       this.checkId = check[1];
+      if (check.length === 0 ) {
+
+        this.checkCode = true;
+        this.checkId = true;
+
+      } else {
+
+        this.checkCode = check[0];
+        this.checkId = check[1];
+
+      }
 
     });
 
@@ -87,10 +89,12 @@ export class FormulaTableComponent implements OnInit {
     };
 
     this.dataService.updateData(updatedValue);
+
+    this.editRowID = null;
   }
 
   jjj(e){
     console.log(e);
-    
+
   }
 }
