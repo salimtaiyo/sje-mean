@@ -5,7 +5,7 @@
 />
 <div class="wrapper">
   <div class="topnav">
-    <h3>Project <i class="far fa-trash-alt"></i></h3>
+    <h3>Project <i class="far fa-trash-alt" (click)="deleteRow()"></i></h3>
   </div>
 
   <table>
@@ -19,7 +19,7 @@
       <!-- <span *ngFor="let data of item"> -->
       <td value="i">
         <input
-          (click)="deleteRowIndex($event.target.value); saveArray(data)"
+          (click)="deleteRowIndex($event, data)"
           type="checkbox"
           name="checked"
           value="{{data._id}}"
@@ -32,11 +32,6 @@
   </table>
 </div>
 
-<button
-  (click)="newMessage()"
-  routerLink="/formula"
-  type="button"
-  class="login"
->
+<button (click)="saveArray()" routerLink="/formula" type="button" class="login">
   Submit
 </button>
