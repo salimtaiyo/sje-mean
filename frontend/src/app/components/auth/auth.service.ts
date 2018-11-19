@@ -51,6 +51,9 @@ export class AuthService {
           this.name = name;
           this.lastname = lastname;
 
+          localStorage.setItem('name', name);
+          localStorage.setItem('lname', lastname);
+
           if(token) {
             const expiresIn = res.expiresIn;
             this.setAuthTimer(expiresIn); // auth timer
@@ -64,7 +67,9 @@ export class AuthService {
             //navigate
             this.router.navigate(["/resource"])
           }
-        })
+        });
+
+        
   }
 
   logout(){
@@ -73,6 +78,10 @@ export class AuthService {
     clearTimeout(this.timer);
     this.clearLocalstorage();
     this.router.navigate(["/"]);
+
+    // clearing name
+    localStorage.removeItem("name");
+    localStorage.removeItem("lname");
   }
 
   // timer
