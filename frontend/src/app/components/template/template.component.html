@@ -29,7 +29,7 @@
 
         <tr>
           <td>name</td>
-          <td><input type="checkbox" /></td>
+          <td><input type="checkbox"/></td>
         </tr>
 
         <tr>
@@ -70,7 +70,7 @@
         <tr *ngFor = "let data of fieldArray; let i = index">
 
           <td> Field <br/>
-            <input type="text" class="rightInput" [(ngModel)]="fieldInput" />
+            <input type="text" (keydown.enter)="templateArray($event)" class="rightInput"/>
           </td>
 
           <td> Type <br/>
@@ -119,6 +119,8 @@
 
 <div style=" width: 80%; margin: 25px auto;">
 
-  <button type="submit" style="width: 20%; float: right; padding: 8px 0;" (click)="save()"> Save </button>
-
+  <button type="submit" 
+          style="width: 20%; float: right; padding: 8px 0;" 
+          routerLink="/formula"
+          (click)="save()"> Save </button>
 </div>

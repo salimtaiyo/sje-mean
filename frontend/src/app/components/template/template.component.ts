@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TransferDataService } from 'src/app/service/transfer-data.service';
 
 @Component({
   selector: 'app-template',
@@ -12,12 +13,14 @@ export class TemplateComponent implements OnInit {
   // variables that are used to send data to the FORMULA page
   fieldInput:any;
   formulaInput:any;
-  public testArray = [1,2,3,4]
+
+  templateData =[];
+
   // ADD FIELDS 
   private fieldArray: Array<any> = []; // to store the field that the user added
   private newAttribute: any = {}; // the value of the field
 
-  constructor() { }
+  constructor(private dataToFormula: TransferDataService) { }
 
   addField() {
 
@@ -44,8 +47,15 @@ export class TemplateComponent implements OnInit {
     }    
   }
 
+  // sends data to the FORMULA page
   save(){
-    console.log(this.fieldInput);
-    
+    this.dataToFormula.templateData(this.templateData);
   }
+
+  // pushes data from the FIELD to "templateData" variable thats going to be sent to the FORMULA PAGE
+  templateArray(e){
+    this.templateData.push(e.target.value);
+  }
+
+
 }

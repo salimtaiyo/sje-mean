@@ -17,13 +17,23 @@ export class FormulaTableComponent implements OnInit {
   updateCode;
 
   // Inserting column from the TEMPLATE PAGE
-  templateArray = ['game', 'jjjj'];
+  templateArray = [];
   constructor(private dataService:MydataService, private transferService:TransferDataService) {}
 
   ngOnInit() {
     this.transferService.currentMessage.subscribe(
       message => this.dataProject = message
     )
+
+    this.transferService.data.subscribe(data => {
+      // console.log(data);
+      
+      for(let i =0; i< data.length; i++){
+      this.templateArray.push(data[i]);
+
+      };
+      console.log(this.templateArray);
+    })
   }
 
   // inline editing valuable
@@ -43,7 +53,6 @@ export class FormulaTableComponent implements OnInit {
       this.updateResource = data.resource;
     }
 
-    // console.log(this.updateResource,this.updateCode,data._id);
     const updatedValue = {
       resource : this.updateResource,
       code: this.updateCode,
