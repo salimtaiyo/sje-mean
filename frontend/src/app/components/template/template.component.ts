@@ -8,11 +8,12 @@ import { TransferDataService } from 'src/app/service/transfer-data.service';
 })
 
 export class TemplateComponent implements OnInit {
-  hideFormula:boolean = false;
+
+  hideFormula: boolean = false;
 
   // variables that are used to send data to the FORMULA page
-  fieldInput:any;
-  formulaInput:any;
+  fieldInput: any;
+  formulaInput: any;
 
   templateData =[];
 
@@ -20,8 +21,8 @@ export class TemplateComponent implements OnInit {
   private fieldArray: Array<any> = []; // to store the field that the user added
   private newAttribute: any = {}; // the value of the field
 
-  checkCode: boolean = true;
-  checkId: boolean = true;
+  checkCode: boolean = false;
+  checkId: boolean = false;
 
   checkArray: Array<any> = [true, true];
 
@@ -51,24 +52,34 @@ export class TemplateComponent implements OnInit {
 
   }
 
+  sendIfChange() {
+
+    this.dataToFormula.templateBool(this.checkArray);
+
+  }
+
   // SELECT field
-  changeOption(e){
+  changeOption(e) {
     // toggling the display of "FORMULA"
-    if(e.target.value === "Formula"){
+    if (e.target.value === "Formula") {
     this.hideFormula = !this.hideFormula;
-    } else{
+    } else {
     this.hideFormula = false;
     }
   }
 
   // sends data to the FORMULA page
-  save(){
+  save() {
     this.dataToFormula.templateData(this.templateData);
   }
 
   // pushes data from the FIELD to "templateData" variable thats going to be sent to the FORMULA PAGE
-  templateArray(e){
+  templateArray(e) {
     this.templateData.push(e.target.value);
+  }
+
+  ngOnInit() {
+
   }
 
 

@@ -18,15 +18,15 @@
   <table>
     <tr>
       <th>Resource Name</th>
-      <th>Resource Code</th>
-      <th>Item ID</th>
-      <th *ngFor="let title of templateArray; let i = index"> {{ title }} </th>
+      <th *ngIf = "checkCode == true">Resource Code</th>
+      <th *ngIf = "checkId == true">Item ID</th>
+      <th *ngFor= "let title of templateArray; let i = index"> {{ title }} </th>
     </tr>
 
     <tr *ngFor="let data of dataProject; let i = index">
 
-      <td *ngIf = "i === editRowID"> 
-        <input type = "text" [(ngModel)] = "data.resource" (keydown.enter)="submitUpdate(data)"/> 
+      <td *ngIf = "i === editRowID">
+        <input type = "text" [(ngModel)] = "data.resource" (keydown.enter)="submitUpdate(data)"/>
       </td>
       <td *ngIf = "i !== editRowID" (click) = "checkEditRow(i)"> {{ data.resource}} <br/></td>
 
