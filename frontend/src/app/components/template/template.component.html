@@ -62,21 +62,21 @@
         <tr *ngFor="let data of fieldArray; let i = index">
           <td>
             Field <br />
-            <input type="text" class="rightInput" />
+            <input type="text" class="rightInput" [(ngModel)]="fieldInput" />
           </td>
 
           <td>
             Type <br />
-            <input type="number" placeholder="Number" class="rightInput" />
+            <select (change)="changeOption($event)">
+              <option value="Number"> Number </option>
+              <option value="Text"> Text </option>
+              <option value="Formula"> Formula </option>
+            </select>
           </td>
 
-          <td>
+          <td *ngIf="hideFormula">
             Formula <br />
-            <input
-              type="text"
-              placeholder="quantity * price"
-              class="rightInput"
-            />
+            <input type="text" [(ngModel)]="formulaInput" class="rightInput" />
           </td>
 
           <td>

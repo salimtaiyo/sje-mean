@@ -9,7 +9,6 @@ import { TransferDataService } from 'src/app/service/transfer-data.service';
 })
 
 export class FormulaTableComponent implements OnInit {
-
   private dataProject;// data thats fetched from the DB
   dataArray=[]; // saves the value
 
@@ -17,6 +16,8 @@ export class FormulaTableComponent implements OnInit {
   updateResource;
   updateCode;
 
+  // Inserting column from the TEMPLATE PAGE
+  templateArray = ['game', 'jjjj'];
   constructor(private dataService:MydataService, private transferService:TransferDataService) {}
 
   ngOnInit() {

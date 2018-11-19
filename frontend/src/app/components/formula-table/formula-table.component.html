@@ -20,6 +20,7 @@
       <th>Resource Name</th>
       <th>Resource Code</th>
       <th>Item ID</th>
+      <th *ngFor="let title of templateArray; let i = index">{{ title[i] }}</th>
     </tr>
 
     <tr *ngFor="let data of dataProject; let i = index">
@@ -45,6 +46,8 @@
       <td *ngIf="i !== editRowID" (click)="checkEditRow(i)">{{ data.code }}</td>
 
       <td>{{ data._id }}</td>
+
+      <td *ngFor="let values of templateArray; let i = index"><input /></td>
     </tr>
   </table>
 

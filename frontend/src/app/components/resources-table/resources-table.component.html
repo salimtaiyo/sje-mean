@@ -15,8 +15,7 @@
 
   <app-search-bar (notify)=onNotifyClicked() (typingString)="getData($event)" (outputColTitle)="getColTitle($event)"></app-search-bar>
 
-  <table *ngIf="users; else: emptyDb">
-
+  <table *ngIf="users; else: emptyDb" class="table__scroll">
     <tr>
       <th>Resource Name</th>
       <th>Resource Code</th>
@@ -46,13 +45,17 @@
   </table>
 
   <div (click)="onChange($event.target.value)" class="pagination">
-    <a>&laquo;</a> <option value="1">1</option> <option value="2">2</option>
-    <option value="3">3</option> <option value="4">4</option>
-    <option value="5">5</option> <option value="6">6</option> <a>&raquo;</a>
+    <a>&laquo;</a> 
+      <option value="1">1</option> 
+      <option value="2">2</option>
+      <option value="3">3</option> 
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option> 
+     <a>&raquo;</a>
   </div>
-
-  <select (change)="onSelectChange($event.target.value)">
-    <option value="5">5</option>
+  <br>
+  <select (change)="onSelectChange($event.target.value)" id="soflow-color">
     <option value="10">10</option>
     <option value="15">15</option>
     <option value="20">20</option>
