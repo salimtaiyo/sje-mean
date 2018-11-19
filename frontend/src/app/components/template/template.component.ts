@@ -12,7 +12,7 @@ export class TemplateComponent implements OnInit {
   // variables that are used to send data to the FORMULA page
   fieldInput:any;
   formulaInput:any;
-
+  public testArray = [1,2,3,4]
   // ADD FIELDS 
   private fieldArray: Array<any> = []; // to store the field that the user added
   private newAttribute: any = {}; // the value of the field
