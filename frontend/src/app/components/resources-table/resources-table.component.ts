@@ -10,9 +10,10 @@ export class ResourcesTableComponent implements OnInit, OnChanges {
   users: Object;
   resourceName: string;
   resourceCode: number;
+
   // pagination
   pagesize: number = 0;
-  page: number = 20;
+  page: number = 10;
 
   typing: string = '';
   searchText: string;

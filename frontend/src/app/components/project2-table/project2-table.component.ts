@@ -46,6 +46,8 @@ export class Project2TableComponent implements OnInit {
 
   saveArray() {
     this.savedArr = this.datas.slice();
+    console.log(this.savedArr);
+    
     this.transferService.changeMessage(this.savedArr);
   }
 }
