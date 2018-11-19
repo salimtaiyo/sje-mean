@@ -19,7 +19,7 @@
     <tr>
       <th>Resource Name</th>
       <th>Resource Code</th>
-      <th *ngFor = "let columnTitle of columnArray; let i  = index"> {{colTitleArray}}  {{ i }}</th>  <!-- add column title -->
+      <th *ngFor = "let columnTitle of columnArray; let i = index"> {{colTitleArray[i]}} </th>  <!-- add column title -->
     </tr>
 
     <tr *ngFor="let user of users | filter : searchText">
