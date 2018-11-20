@@ -14,8 +14,8 @@ export class HeaderComponent implements OnInit {
   show: boolean;
 
   // name
-  name = localStorage.getItem('name');
-  lname = localStorage.getItem('lname');
+  name;
+  lname;
 
   constructor(private projectHeader: TransferDataService) {}
 
@@ -28,11 +28,25 @@ export class HeaderComponent implements OnInit {
       }
       this.projectTitle = data;
     })
+
+    this.checker();
   }
 
+  checker(){
+    if(!this.name){
+      this.name = "User",
+      this.lname= "name"
+    }
+    this.name = localStorage.getItem('name');
+    this.lname = localStorage.getItem('lname');
+  }
   public signOut() {
     localStorage.removeItem("token");
     localStorage.removeItem("expiration");
+    
+    // clears tha name
+    localStorage.removeItem("name");
+    localStorage.removeItem("lname");
   }
 
 

@@ -1,8 +1,9 @@
 <!-- main app container -->
 <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
+ rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
 />
+
 <div class="jumbotron animated fadeInRightBig ">
   <div class="container animated fadeInLeftBig delay-1s">
     <div class="row">
@@ -22,6 +23,7 @@
               class="form-control"
               name="firstName"
               [(ngModel)]="model.firstName"
+              value={{firstName}}
               #firstName="ngModel"
               [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }"
               required
@@ -119,7 +121,7 @@
               </div>
             </div>
           </div>
-          <div class="form-group"><button class="login">Sign UP</button></div>
+          <div class="form-group"><button class="login" (click)="onSignup(f)">Sign UP</button></div>
           <div class="form-group">
             <button class="login-ex" routerLink="/">Go Back</button>
           </div>

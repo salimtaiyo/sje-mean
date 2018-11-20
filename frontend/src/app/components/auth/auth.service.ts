@@ -68,8 +68,6 @@ export class AuthService {
             this.router.navigate(["/resource"])
           }
         });
-
-        
   }
 
   logout(){
@@ -78,10 +76,6 @@ export class AuthService {
     clearTimeout(this.timer);
     this.clearLocalstorage();
     this.router.navigate(["/"]);
-
-    // clearing name
-    localStorage.removeItem("name");
-    localStorage.removeItem("lname");
   }
 
   // timer

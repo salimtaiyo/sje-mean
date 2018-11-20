@@ -9,21 +9,24 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
   model: any = {};
   ngOnInit() {}
 
-  // onSignup(form: NgForm) {
-  //   this.authService.createUser(
-  //     form.value.emailInput,
-  //     form.value.passwordInput,
-  //     form.value.name,
-  //     form.value.lastname
-  //   );
-  // }
+  onSignup(form: NgForm) {
+    console.log(form.value);
+    
+    this.authService.createUser(
+      form.value.email,
+      form.value.password,
+      form.value.firstName,
+      form.value.lastName
+    );
+  }
 
   onSubmit() {
     // alert(JSON.stringify(this.model));
-    this.router.navigate(['/resource']);
+    
+    this.router.navigate(['/']);
   }
 }
