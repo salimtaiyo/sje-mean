@@ -26,13 +26,9 @@ export class FormulaTableComponent implements OnInit {
     )
 
     this.transferService.data.subscribe(data => {
-      // console.log(data);
-      
       for(let i =0; i< data.length; i++){
       this.templateArray.push(data[i]);
-
       };
-      console.log(this.templateArray);
     })
   }
 
@@ -62,8 +58,11 @@ export class FormulaTableComponent implements OnInit {
     this.dataService.updateData(updatedValue);
   }
 
+  ooo = [];
+
   jjj(e){
-    console.log(e);
-    
+    this.ooo.push(e.target.value)
+    console.log(typeof e.target.value);
+    console.log(this.ooo);
   }
 }

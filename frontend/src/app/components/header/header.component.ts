@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TransferDataService } from 'src/app/service/transfer-data.service';
 
 @Component({
   selector: 'app-header',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  
+  projectTitle = "Project 1";
 
   // popup;
   show: boolean;
@@ -14,17 +17,23 @@ export class HeaderComponent implements OnInit {
   name = localStorage.getItem('name');
   lname = localStorage.getItem('lname');
 
-  constructor() {}
+  constructor(private projectHeader: TransferDataService) {}
 
   ngOnInit() {
     this.show = false;
-    console.log(this.name);
-    
-    
+    // Project Title
+    this.projectHeader.title.subscribe(data => {
+      if(!data){
+        return;
+      }
+      this.projectTitle = data;
+    })
   }
 
   public signOut() {
     localStorage.removeItem("token");
     localStorage.removeItem("expiration");
   }
+
+
 }

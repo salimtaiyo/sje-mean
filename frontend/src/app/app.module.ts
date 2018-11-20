@@ -33,6 +33,7 @@ import { ProjectTableComponent } from './components/project-table/project-table.
 import { Project2TableComponent } from './components/project2-table/project2-table.component';
 import { FilterPipe } from './components/resources-table/filter.pipe';
 import { TemplateComponent } from './components/template/template.component';
+import { ProjecttitleComponent } from './components/projecttitle/projecttitle.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { TemplateComponent } from './components/template/template.component';
     Project2TableComponent,
     FormulaTableComponent,
     FilterPipe,
-    TemplateComponent, 
+    TemplateComponent,
+    ProjecttitleComponent, 
     
   ],
   imports: [

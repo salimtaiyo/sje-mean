@@ -11,6 +11,9 @@ export class TransferDataService {
   private dataTemplate = new BehaviorSubject([]);
   data = this.dataTemplate.asObservable();
   
+  private projectTitle = new BehaviorSubject('');
+  title = this.projectTitle
+
   constructor() { }
 
   changeMessage(message) {
@@ -19,5 +22,9 @@ export class TransferDataService {
 
   templateData(data){
     this.dataTemplate.next(data);
+  }
+
+  projectHeader(props){
+    this.projectTitle.next(props);
   }
 }

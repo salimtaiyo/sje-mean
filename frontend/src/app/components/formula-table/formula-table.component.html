@@ -1,6 +1,8 @@
 <app-header></app-header>
 <app-navbar></app-navbar>
 
+<app-projecttitle></app-projecttitle>
+
 <div class="wrapper">
   <div class="tableTitle">
     <h3 style="color: white; margin: .5em .3em;">QUANTITY SURVEY</h3>
@@ -32,7 +34,9 @@
 
       <td> {{ data._id}}</td>
 
-      <td *ngFor="let values of templateArray; let i = index"> <input (keydown.enter)="jjj($event)"/> </td>
+      <td *ngFor="let values of templateArray; let i = index"> 
+        <input (keydown.enter)="jjj($event)"/>
+      </td>
     </tr>
 
   </table>
@@ -40,7 +44,9 @@
   <div style=" width: 90%; margin: 25px auto;">
     <a href="#" style="font-weight: bold;" routerLink="/template"> Edit Quantity Survey Template </a>
 
-    <button type="submit" routerLink="/resource"><i class="fas fa-check"></i> Submit</button>
+    <button type="submit" routerLink="/resource">
+      <i class="fas fa-check"></i> Submit
+    </button>
   </div>
 </div>
 

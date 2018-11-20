@@ -6,6 +6,7 @@ import {
   SimpleChanges
 } from '@angular/core';
 import { MydataService } from 'src/app/service/mydata.service';
+import { TransferDataService } from 'src/app/service/transfer-data.service';
 
 @Component({
   selector: 'app-project-table',
@@ -17,6 +18,8 @@ export class ProjectTableComponent implements OnInit {
   dataArray; // the saved array thats being sent to the child component
   dataStorage = [];
   checkAll: Boolean = false;
+
+  
 
   constructor(private dataService: MydataService) {}
   ngOnInit() {
@@ -53,4 +56,6 @@ export class ProjectTableComponent implements OnInit {
     this.dataStorage.length = 0;
     this.checkAll = !event.target.checked;
   }
+
+ 
 }

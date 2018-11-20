@@ -1,11 +1,8 @@
 <app-header></app-header>
 <app-navbar></app-navbar>
-<!-- cdn for animate.css -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
-/>
 
+
+<app-projecttitle></app-projecttitle>
 <div class="fix">
   <!-- first table -->
   <div class="fix__first animated bounceInLeft">
@@ -25,7 +22,7 @@
             <span class="list"><i class="fas fa-list-ul orange "> </i></span>
             <div class="dropdown-content" *ngIf="show">
               <a (click)="checkallrecords($event)">
-                <input type="checkbox" name="checked" /> Select All
+                <input  type="checkbox" name="checked" /> Select All
               </a>
               <a (click)="clearallRecords($event)">
                 <input type="checkbox" name="checked" /> Clear Selection
