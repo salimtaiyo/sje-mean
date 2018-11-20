@@ -1,14 +1,7 @@
 <app-header></app-header>
 <app-navbar></app-navbar>
 
-<link
-  rel="stylesheet"
-  href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-  integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
-  crossorigin="anonymous"
-/>
-
-
+<app-projecttitle></app-projecttitle>
 
 <div class="wrapper">
   <!-- search bar -->
@@ -29,7 +22,6 @@
     </tr>
 
     <!-- hidden content -->
-
     <tr *ngIf="status">
       <td><input [(ngModel)]="resourceName" type="text" /></td>
       <td><input type="number" [(ngModel)]="resourceCode" /></td>
@@ -45,6 +37,7 @@
   </table>
 </div>
 
+<!-- pagination  -->
   <div (click)="onChange($event.target.value)" class="pagination">
     <a>&laquo;</a> 
       <option value="1">1</option> 
@@ -62,6 +55,7 @@
     <option value="20">20</option>
   </select>
 
+  <!-- Loading animation -->
   <ng-template #emptyDb>
     <div class="container">
       <div class="dash uno"></div>
