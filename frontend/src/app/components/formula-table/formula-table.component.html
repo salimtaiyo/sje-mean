@@ -27,9 +27,9 @@
       <td *ngIf = "i === editRowID">
         <input type = "text" placeholder="{{ data.code }}" [(ngModel)]= "data.code" (keydown.enter)="submitUpdate(data)"/>
       </td>
-      <td *ngIf = "i !== editRowID" (click) = "checkEditRow(i)">{{ data.code }}</td>
+      <td *ngIf = "i !== editRowID && checkCode == true" (click) = "checkEditRow(i)">{{ data.code }}</td>
 
-      <td> {{ data._id}}</td>
+      <td *ngIf = "checkId == true"> {{ data._id}}</td>
 
       <td *ngFor="let values of templateArray; let i = index"> <input (keydown.enter)="jjj($event)"/> </td>
     </tr>
