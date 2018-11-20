@@ -10,10 +10,16 @@ export class HeaderComponent implements OnInit {
   // popup;
   show: boolean;
 
+  // name
+  name = localStorage.getItem('name');
+  lname = localStorage.getItem('lname');
+
   constructor() {}
 
   ngOnInit() {
     this.show = false;
+    console.log(this.name);
+    
     
   }
 

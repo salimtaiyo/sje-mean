@@ -11,19 +11,19 @@ export class SearchBarComponent implements OnInit {
 
   @Output() typingString = new EventEmitter<string>(); // filter to parent component
 
-  @Output() outputColTitle = new EventEmitter<string>(); // 
+  @Output() outputColTitle = new EventEmitter<string>(); //
 
 
   show: boolean = false;
 
-  data: string; 
+  data: string;
 
-  colTitle: string; // the title of added col 
+  colTitle: string; // the title of added col
 
   showAddColWindow: boolean = false;
 
   sendTypingString(data: string) {
-    this.typingString.emit(data);    
+    this.typingString.emit(data);
   }
 
   constructor() {}
@@ -41,11 +41,11 @@ export class SearchBarComponent implements OnInit {
   }
 
   closedPopup() {
-    
+
     this.showAddColWindow = false;
     this.show = false;
-    
-  } 
+
+  }
 
   ngOnInit() {}
 }
