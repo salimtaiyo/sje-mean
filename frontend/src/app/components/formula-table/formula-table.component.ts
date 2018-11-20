@@ -9,8 +9,9 @@ import { TransferDataService } from 'src/app/service/transfer-data.service';
 })
 
 export class FormulaTableComponent implements OnInit {
-  private dataProject;// data thats fetched from the DB
-  dataArray=[]; // saves the value
+
+  private dataProject; // data thats fetched from the DB
+  dataArray = []; // saves the value
 
   // input
   updateResource;
@@ -18,18 +19,47 @@ export class FormulaTableComponent implements OnInit {
 
   // Inserting column from the TEMPLATE PAGE
   templateArray = [];
-  constructor(private dataService:MydataService, private transferService:TransferDataService) {}
+  constructor(private dataService: MydataService, private transferService: TransferDataService) {}
+
+  // to store the var for checking the column display or not
+
+  checkCode: boolean = true;
+  checkId: boolean = true;
 
   ngOnInit() {
+
     this.transferService.currentMessage.subscribe(
       message => this.dataProject = message
-    )
+    );
 
     this.transferService.data.subscribe(data => {
       for(let i =0; i< data.length; i++){
       this.templateArray.push(data[i]);
       };
     })
+      // console.log(data);
+
+
+    // get the status from template page
+
+    this.transferService.check.subscribe(check => {
+
+      console.log(check);
+
+      if (check.length === 0 ) {
+
+        this.checkCode = true;
+        this.checkId = true;
+
+      } else {
+
+        this.checkCode = check[0];
+        this.checkId = check[1];
+
+      }
+
+    });
+
   }
 
   // inline editing valuable
@@ -41,11 +71,11 @@ export class FormulaTableComponent implements OnInit {
   }
 
   submitUpdate(data) {
-    if(!this.updateCode){
+    if (!this.updateCode) {
       this.updateCode = data.code;
     }
 
-    if(!this.updateResource){
+    if (!this.updateResource) {
       this.updateResource = data.resource;
     }
 
@@ -54,8 +84,11 @@ export class FormulaTableComponent implements OnInit {
       code: this.updateCode,
       _id: data._id
 
-    }
+    };
+
     this.dataService.updateData(updatedValue);
+
+    this.editRowID = null;
   }
 
   ooo = [];

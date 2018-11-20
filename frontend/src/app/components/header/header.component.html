@@ -29,9 +29,10 @@
     <label class="personInfo" ><i (click)="show = !show" class="fas fa-user-circle fa-2x" style="margin: 0 .5rem"></i>
 
       <!-- pop up user information -->
-      
+
        <div *ngIf = "show">
         <span class="dialog" >
+          <p style = "visibility: hidden;"> ... </p>
           <p> {{ name }} {{ lname }} </p>
           <p style = "font-size: 1.2em;"> </p>
           <p style = "font-size: .8em;"> Member since </p>

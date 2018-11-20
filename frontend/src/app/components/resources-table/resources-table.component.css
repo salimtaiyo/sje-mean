@@ -6,11 +6,6 @@ table {
   height: 100%;
 }
 
-/* table header thats fixed */
-.table__header{
-  display: fixed;
-}
-
 td,
 th {
   border: 1px solid #dddddd;
@@ -144,20 +139,20 @@ input[type='number']:focus {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-
 /* pagination */
 .pagination {
   display: inline-flex;
-  transform: translateX(123%)
+  transform: translateX(123%);
 }
 
-.pagination a, .pagination option {
+.pagination a,
+.pagination option {
   color: black;
   padding: 8px 16px;
   text-decoration: none;
 }
 
-.pagination option:hover{
+.pagination option:hover {
   cursor: pointer;
   color: #ff5500e8;
 }

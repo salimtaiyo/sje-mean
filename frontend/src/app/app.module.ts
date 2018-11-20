@@ -20,6 +20,7 @@ import { MenuItem } from 'primeng/api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from '@angular/material';
+import { MustMatchDirective } from './components/helper/must-match-directive';
 
 import {
   MatMenuModule,
@@ -51,6 +52,7 @@ import { ProjecttitleComponent } from './components/projecttitle/projecttitle.co
     TemplateComponent,
     ProjecttitleComponent, 
     
+    MustMatchDirective
   ],
   imports: [
     BrowserModule,
@@ -68,9 +70,7 @@ import { ProjecttitleComponent } from './components/projecttitle/projecttitle.co
     MatIconModule,
     MatCardModule,
     MatSidenavModule,
-    MatToolbarModule, 
-
-    
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
